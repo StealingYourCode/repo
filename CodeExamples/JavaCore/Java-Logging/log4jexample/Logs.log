@@ -1,0 +1,17 @@
+2012-05-02 14:21:47,084 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:21:47,084 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:23:29,427 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:23:29,443 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:27:33,366 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:27:33,366 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:28:06,458 WARN  com.fdm.log4jexample.App- warn
+2012-05-02 14:28:06,458 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:28:06,458 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:28:44,554 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:28:44,554 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:29:16,409 WARN  com.fdm.log4jexample.App- warn
+2012-05-02 14:29:16,409 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:29:16,409 FATAL com.fdm.log4jexample.App- fatal
+2012-05-02 14:30:18,182 WARN  com.fdm.log4jexample.App- warn
+2012-05-02 14:30:18,182 ERROR com.fdm.log4jexample.App- error
+2012-05-02 14:30:18,182 FATAL com.fdm.log4jexample.App- fatal
