@@ -1,7 +1,7 @@
 package com.fdm.genericsExample;
 
 public class StorageHandler<E extends Storable, D extends Storage> {
-
+	// D is to represent Destination
 	private D storage;
 	private StorableFactory factory;
 	
