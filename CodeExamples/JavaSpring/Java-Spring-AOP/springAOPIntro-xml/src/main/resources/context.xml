@@ -12,9 +12,6 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 	">
-
-	<!-- <context:annotation-config />  -->
-
 	
 	<bean id="user" class="com.fdm.springAOPIntro.User" scope="prototype" />
 	<bean id="security" class="com.fdm.springAOPIntro.Security" />
@@ -27,16 +24,4 @@
 		</aop:aspect>
 	</aop:config>
 
-	
-
-	<!-- 
-	<aop:aspectj-autoproxy />
-	<aop:config>
-		<aop:aspect ref="security">
-			<aop:pointcut id="readInput"
-				expression="execution(java.lang.String com.fdm.bankingSystem.ui.CommandLineUserInputReader.readUserInput(..)) " />
-			<aop:after-returning pointcut-ref="readInput"
-				returning="input" method="clean" />
-		</aop:aspect>
-	</aop:config> -->
 </beans>
