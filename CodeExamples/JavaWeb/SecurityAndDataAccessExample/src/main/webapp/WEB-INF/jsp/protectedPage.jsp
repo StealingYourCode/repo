@@ -9,5 +9,8 @@
 	<body>
 		<h1>You are viewing a protected page!</h1>
 		<p>Your address is ${address}</p>
+		<c:if test="${sessionScope.isUser}">
+			<h2>You are a user!</h2>
+		</c:if>
 	</body>
 </html>

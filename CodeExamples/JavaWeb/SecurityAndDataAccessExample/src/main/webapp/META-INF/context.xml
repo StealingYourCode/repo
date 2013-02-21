@@ -4,7 +4,7 @@
 	<Resource name="jdbc/connection" auth="Container" scope="Shareable"
 		type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
 		
-		username="*********" password="********"
+		username="***********" password="*********"
 		
 		url="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe" description=""
 		maxWait="-1" maxActive="1" maxIdle="-1" removeAbandoned="true"

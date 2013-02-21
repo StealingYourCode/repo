@@ -20,7 +20,11 @@ public class Home extends HttpServlet {
 		/*
 		 * The principal is populated by tomcat, and the name coincides with the username.
 		 */
+		HttpSession session = request.getSession();
 		Principal p = request.getUserPrincipal();
+		if(request.isUserInRole("user")){
+			session.setAttribute("isUser", true);
+		}
 		String username = p.getName();
 		String query = "SELECT address FROM example_users WHERE username = '"+username+"'";
 		/*
@@ -42,7 +46,7 @@ public class Home extends HttpServlet {
 			Statement stmt = connection.createStatement();
 			rset = stmt.executeQuery(query);
 			while(rset.next()){
-				request.setAttribute("address", rset.getString("address"));
+				session.setAttribute("address", rset.getString("address"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
