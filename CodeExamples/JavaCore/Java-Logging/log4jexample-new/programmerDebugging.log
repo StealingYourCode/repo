@@ -1,0 +1,12 @@
+TRACE - programmer log: trace message
+DEBUG - programmer log: debug message
+INFO - programmer log: info message
+WARN - programmer log: warn message
+ERROR - programmer log: error message
+FATAL - programmer log: fatal message
+TRACE - manager log: trace message
+DEBUG - manager log: debug message
+INFO - manager log: info message
+WARN - manager log: warn message
+ERROR - manager log: error message
+FATAL - manager log: fatal message
