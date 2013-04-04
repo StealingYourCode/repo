@@ -25,6 +25,8 @@ public class Demo {
 	// log.warn(...), etc.
 	
 	public static void main(String[] args) {
+		
+		PropertyConfigurator.configure("./log4j.properties");
 
 		// These logging requests allow us to see the effect
 		// of changing the severity level with which each logger
