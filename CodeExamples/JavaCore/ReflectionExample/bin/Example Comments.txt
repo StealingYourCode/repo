@@ -1,0 +1,6 @@
+Demonstrates the use of Reflection to create objects of varying types
+on the fly.  The object that is created is dependent on the variety
+property being set correctly.  This aids in the creation of code that
+follows Open/Closed principle and is extensible. That is to say that new
+Apple classes can be added and utilized without having to edit the 
+existing code.
