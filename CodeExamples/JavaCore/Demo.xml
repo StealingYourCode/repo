@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>New Properties file</comment>
+<entry key="number2">20</entry>
+<entry key="number1">10</entry>
+<entry key="greeting">Hello, Class again!</entry>
+<entry key="departure">Goodbye, Class!</entry>
+</properties>
