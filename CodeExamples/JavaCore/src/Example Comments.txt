@@ -1,2 +1,0 @@
-Demonstrates the different features in reading, manipulating, and editing 
-properties files
