@@ -1,0 +1,14 @@
+This example is designed to demonstrate the performance of different
+collections, if given the same input under the same circumstances. The 
+trainees should see how different collections will organize and present
+the data entered differently - i.e. some collections will maintain order
+while others will not, the preservation of duplicates, etc. When
+presenting this aspect, you should set the SAMPLE_LIMIT to a low value, 
+10 is recommended.
+
+This example also shows the amount of time it takes to store values and 
+access values via the use of a stopwatch. For this part of the demonstration
+you will want to set SAMPLE_LIMIT to a relatively high value, 100000 is 
+recommended, to see significant differences between the collections.
+
+-Craig
