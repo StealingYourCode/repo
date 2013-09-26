@@ -1,0 +1,89 @@
+2013-08-13 10:08:05 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-08-13 10:08:05 ERROR LoggingExampleLive:29 - Terrible error.
+2013-08-13 10:08:05 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-08-13 10:10:01 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-08-13 10:10:01 ERROR LoggingExampleLive:29 - Terrible error.
+2013-08-13 10:10:01 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-08-13 10:13:35 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-08-13 10:13:35 ERROR LoggingExampleLive:29 - Terrible error.
+2013-08-13 10:13:35 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-08-13 10:13:35 ERROR LoggingExampleLive:42 - Null reference here..
+2013-08-13 10:13:35 ERROR LoggingExampleLive:49 - Array index out of bounds
+2013-08-13 10:13:35 ERROR LoggingExampleLive:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-08-13 10:14:25 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-08-13 10:14:25 ERROR LoggingExampleLive:29 - Terrible error.
+2013-08-13 10:14:25 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-08-13 10:14:25 ERROR LoggingExampleLive:42 - Null reference here..
+2013-08-13 10:14:25 ERROR LoggingExampleLive:49 - Array index out of bounds
+2013-08-13 10:14:25 ERROR LoggingExampleLive:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-08-13 10:14:25 ERROR LoggingExampleLive:56 - message
+java.lang.ArrayIndexOutOfBoundsException: 17
+	at com.fdmgroup.live.LoggingExampleLive.logsWithDefensiveCoding(LoggingExampleLive.java:52)
+	at com.fdmgroup.live.LoggingExampleLive.main(LoggingExampleLive.java:67)
+2013-09-10 10:40:02 TRACE LoggingExampleLive:23 - We just entered a method.
+2013-09-10 10:40:02 INFO  LoggingExampleLive:25 - Some info.
+2013-09-10 10:40:02 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 10:40:02 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 10:40:02 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 10:40:02 ERROR LoggingExampleLive:42 - Null reference here..
+2013-09-10 10:40:02 ERROR LoggingExampleLive:49 - Array index out of bounds
+2013-09-10 10:40:02 ERROR LoggingExampleLive:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-09-10 10:40:02 ERROR LoggingExampleLive:56 - message
+java.lang.ArrayIndexOutOfBoundsException: 17
+	at com.fdmgroup.live.LoggingExampleLive.logsWithDefensiveCoding(LoggingExampleLive.java:52)
+	at com.fdmgroup.live.LoggingExampleLive.main(LoggingExampleLive.java:67)
+2013-09-10 10:40:23 TRACE LoggingExampleLive:23 - We just entered a method.
+2013-09-10 10:40:23 INFO  LoggingExampleLive:25 - Some info.
+2013-09-10 10:40:23 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 10:40:23 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 10:40:23 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 10:40:41 TRACE LoggingExampleLive:23 - We just entered a method.
+2013-09-10 10:40:41 INFO  LoggingExampleLive:25 - Some info.
+2013-09-10 10:40:41 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 10:40:41 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 10:40:41 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:18:27 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 11:18:27 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 11:18:27 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:20:47 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 11:20:47 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 11:20:47 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:57:01 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 11:57:01 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 11:57:01 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:57:03 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 11:57:03 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 11:57:03 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:57:08 WARN  LoggingExampleLive:27 - Warning. Errors ahead.
+2013-09-10 11:57:08 ERROR LoggingExampleLive:29 - Terrible error.
+2013-09-10 11:57:08 FATAL LoggingExampleLive:31 - This error is even worse.
+2013-09-10 11:57:08 ERROR LoggingExampleLive:42 - Null reference here..
+2013-09-10 11:57:08 ERROR LoggingExampleLive:49 - Array index out of bounds
+2013-09-10 11:57:08 ERROR LoggingExampleLive:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-09-10 11:57:08 ERROR LoggingExampleLive:56 - message
+java.lang.ArrayIndexOutOfBoundsException: 17
+	at com.fdmgroup.live.LoggingExampleLive.logsWithDefensiveCoding(LoggingExampleLive.java:52)
+	at com.fdmgroup.live.LoggingExampleLive.main(LoggingExampleLive.java:67)
+2013-09-10 11:57:42 ERROR LoggingExampleLive:42 - Null reference here..
+2013-09-10 11:57:42 ERROR LoggingExampleLive:49 - Array index out of bounds
+2013-09-10 11:57:42 ERROR LoggingExampleLive:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-09-10 11:57:42 ERROR LoggingExampleLive:56 - message
+java.lang.ArrayIndexOutOfBoundsException: 17
+	at com.fdmgroup.live.LoggingExampleLive.logsWithDefensiveCoding(LoggingExampleLive.java:52)
+	at com.fdmgroup.live.LoggingExampleLive.main(LoggingExampleLive.java:67)
+2013-09-10 12:25:38 ERROR MyLogger:42 - Null reference here..
+2013-09-10 12:25:38 ERROR MyLogger:49 - Array index out of bounds
+2013-09-10 12:25:38 ERROR MyLogger:55 - java.lang.ArrayIndexOutOfBoundsException: 17
+2013-09-10 12:25:38 ERROR MyLogger:56 - message
+java.lang.ArrayIndexOutOfBoundsException: 17
+	at com.fdmgroup.live.LoggingExampleLive.logsWithDefensiveCoding(LoggingExampleLive.java:52)
+	at com.fdmgroup.live.LoggingExampleLive.main(LoggingExampleLive.java:67)
+2013-09-10 12:27:48 WARN  MyLogger:27 - Warning. Errors ahead.
+2013-09-10 12:27:48 ERROR MyLogger:29 - Terrible error.
+2013-09-10 12:27:48 FATAL MyLogger:31 - This error is even worse.
+2013-09-10 12:28:29 WARN  MyLogger:27 - Warning. Errors ahead.
+2013-09-10 12:28:29 ERROR MyLogger:29 - Terrible error.
+2013-09-10 12:28:29 FATAL MyLogger:31 - This error is even worse.
+2013-09-10 12:28:48 WARN  MyLogger:27 - Warning. Errors ahead.
+2013-09-10 12:28:48 ERROR MyLogger:29 - Terrible error.
+2013-09-10 12:28:48 FATAL MyLogger:31 - This error is even worse.
