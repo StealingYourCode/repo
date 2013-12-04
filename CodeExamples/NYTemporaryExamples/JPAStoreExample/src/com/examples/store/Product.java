@@ -25,7 +25,7 @@ public class Product {
 	@Column(name = "QUANTITY")
 	int quantityInStock;
 
-	@ManyToOne(cascade = CascadeType.ALL) 
+	@ManyToOne(cascade = CascadeType.PERSIST) 
 	@JoinColumn(name = "DEPT_ID")
 	Department dept;
 	

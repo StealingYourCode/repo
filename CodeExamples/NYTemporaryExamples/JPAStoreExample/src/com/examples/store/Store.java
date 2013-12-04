@@ -13,7 +13,16 @@ public class Store {
 	List<Product> inventory = new ArrayList<Product>();
 	List<Department> departments = new ArrayList<Department>();
 	
-	
+	public void printAll(){
+		/* ----- Print all ----- */
+
+		for(Department d : departments)
+			System.out.println(d.name);
+		
+		for(Product p : inventory)
+			System.out.println("\n"+p);
+		
+	}
 	
 	public static void main(String[] args){
 
@@ -26,47 +35,36 @@ public class Store {
 
 		
 		
-		/* ----- Get all departments ---- 
+		/* ----- Get all departments ---- */
 		
-		em.getTransaction().begin();
 		
 		Query query = em.createNativeQuery(
 				"SELECT * FROM JPA_DEPT", Department.class);
 
-		// Why are we getting a warning here?
-		myStore.departments = query.getResultList();
+		myStore.departments = (List<Department>)query.getResultList();
 
-		em.getTransaction().commit();
-		
-		
-		/* ----- Print all ----- 
-
-		for(Department d : myStore.departments)
-			System.out.println(d.name);
-		
 		
 
-		/* ----- Departments are loaded ----- 
+		
+
+		/* ----- Departments are loaded ----- */
 		 
-		em.getTransaction().begin();
 		
 		query = em.createNativeQuery(
 				"SELECT * FROM JPA_PRODUCT", Product.class);
 
 		myStore.inventory = query.getResultList();
 		
-		em.getTransaction().commit();
 		
-		for(Product p : myStore.inventory)
-			
-			System.out.println("\n"+p);
+		
+		
 		
 		/* ----- Inventory is loaded ----- */
 		
+		//myStore.printAll();
 
+		/* ----- Pineapples suddenly double in price ----- */
 
-		/* ----- Pineapples suddenly double in price ----- 
-		
 		em.getTransaction().begin();
 		
 		for(Product p : myStore.inventory) {
@@ -95,11 +93,16 @@ public class Store {
 		
 		
 		em.getTransaction().begin();
+		
 		em.persist(p);
+		
 		em.getTransaction().commit();
 		
 		
-		
+
+		//myStore.printAll();
+
+		/* ---- */
 		
 		em.getTransaction().begin();
 		
@@ -112,7 +115,7 @@ public class Store {
 		
 		
 		
-		/* ----- Forget the diamonds ----- 
+		/* ----- Forget the diamonds ----- */
 		
 		em.getTransaction().begin();
 		
@@ -124,7 +127,12 @@ public class Store {
 		
 		
 		em.close();
-		*/
+		
+		// At this point,
+		// diamond ring is not in the DB
+		// but still in our program
+		// accessible through myStore.inventory
+		myStore.printAll();
 	}
 	
 }
