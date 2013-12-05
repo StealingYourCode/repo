@@ -15,18 +15,16 @@ public class SpringAOPMain {
 				new ClassPathXmlApplicationContext("Example.xml");
 		
 		ClassA a = (ClassA) ctx.getBean("cA");
-		
-//		ClassA a = new original.ClassA();
 		ClassB b = (ClassB) ctx.getBean("cB");
-//		ClassB b = new original.ClassB();
+
 		
 //		a.method1();
 //		a.method2(10);
 //		a.method2();
-//	
+
 		
-//		b.method1();
-//		b.method2();
-		a.getInstance();
+		b.method1();
+		b.method2();
+//		a.getBInstance();
 	}
 }

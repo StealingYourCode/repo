@@ -18,9 +18,4 @@ public class ConsoleLog {
 		System.out.println("Class B was returned.");
 	}
 	
-//	public void aroundCall()
-//	{
-//		System.out.println("Yippee!!");
-//	}
-	
 }

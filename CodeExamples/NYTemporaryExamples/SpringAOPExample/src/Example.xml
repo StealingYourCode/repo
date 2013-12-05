@@ -27,13 +27,14 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
    		<aop:before pointcut-ref="everything" method="displayEntry" />
    		<aop:before pointcut-ref="method2Only" method="displayEntryMethod2" />
    		<aop:after pointcut-ref="ClassBReturnTypeOnlyAnyClass" method="displayReturnClassB" />
+
 	<!-- <aop:around pointcut-ref="everything" method="aroundCall"/> -->
 		
   	</aop:aspect>
   	
  </aop:config>
  
-<!-- <aop:aspectj-autoproxy/> -->
+ <aop:aspectj-autoproxy/> 
 
  
 </beans>

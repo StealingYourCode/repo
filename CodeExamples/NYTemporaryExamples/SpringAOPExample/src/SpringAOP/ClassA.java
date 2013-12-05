@@ -16,12 +16,12 @@ public class ClassA {
 	
 	public int method2(int x)
 	{
-		System.out.println("Class A method2 WITH ARG actual action.");
+		System.out.println("Class A method2 WITH ARG actual action.");		
 		return 1;
 	}
 	
 
-	public ClassB getInstance()
+	public ClassB getBInstance()
 	{
 		System.out.println("Class B Being Created!");
 		return new ClassB();
