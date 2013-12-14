@@ -20,7 +20,7 @@ public class StopWatch {
     }
 
     
-    //elaspsed time in milliseconds
+    //elapsed time in milliseconds
     public long getElapsedTime() {
         long elapsed;
         if (running) {
@@ -33,7 +33,7 @@ public class StopWatch {
     }
     
     
-    //elaspsed time in seconds
+    //elapsed time in seconds
     public long getElapsedTimeSecs() {
         long elapsed;
         if (running) {
