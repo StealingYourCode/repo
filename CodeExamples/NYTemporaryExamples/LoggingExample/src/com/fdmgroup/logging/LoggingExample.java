@@ -6,20 +6,22 @@ import org.apache.log4j.PropertyConfigurator;
 public class LoggingExample {
 	
 	
-	static Logger log = 
+	private static Logger log = 
 			Logger.getLogger(LoggingExample.class);
 	
 	
-	LoggingExample(){
+	public LoggingExample(){
 		
 		PropertyConfigurator.configure("log4j.properties");
 
 	}
 
-	void thisMethodWillLog(){
+	public void thisMethodWillLog(){
 
 		log.trace("We just entered a method.");
 
+		log.debug("We are debugging.");
+		
 		log.info("Some info.");
 		
 		log.warn("Warning. Errors ahead.");
