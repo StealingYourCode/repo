@@ -1,3 +1,6 @@
+/* You will need to make a real.properties file. 
+ * See fake.properties for details of what to include.
+ * */
 package com.fdmgroup.jdbc;
 
 import java.sql.Connection;
