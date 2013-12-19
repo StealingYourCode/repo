@@ -8,30 +8,30 @@ class GermanShepherd extends Dog {  }
 class Poodle extends Dog {  }
 
 // This is the Factory pattern
-// class DogCreator {   
-//	
-//	Dog makeDog(int x){
-//		if (x == 0)
-//			return new Poodle();
-//		else
-//			return new GermanShepherd();
-//	}
-//	
-//}
+class DogFactory {   
+	
+	Poodle makePoodle(){
+		return new Poodle();
+	}
+	
+	GermanShepherd makeGermanShepherd(){
+		return new GermanShepherd();
+	}
+}
 
 
 // This is the Factory Method pattern
-abstract class DogCreator{  
+abstract class DogFactoryMethod{  
 	abstract Dog makeDog();
 }
 
-class PoodleCreator extends DogCreator{ 
+class PoodleCreator extends DogFactoryMethod{ 
 	Dog makeDog(){
 		return new Poodle();
 	}
 }
 
-class GermanShepherdCreator extends DogCreator{ 
+class GermanShepherdCreator extends DogFactoryMethod{ 
 	Dog makeDog(){
 		return new GermanShepherd();
 	}
@@ -40,17 +40,11 @@ class GermanShepherdCreator extends DogCreator{
 public class FactoryFactoryMethodExample {
 
 	private static Dog myDog; 
-	
-	private static void doDogThings(){
-		// do something with myDog
-		myDog.toString();
-	}
-	
 
 	
 	public static void main(String[] args) {
 		// Factory
-		// myDog = new DogCreator().makeDog(6);
+		myDog = new DogFactory().makePoodle();
 		
 		// Factory Method
 		myDog = new PoodleCreator().makeDog();

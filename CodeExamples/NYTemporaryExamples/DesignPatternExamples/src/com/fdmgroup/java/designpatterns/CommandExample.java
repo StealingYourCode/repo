@@ -7,7 +7,6 @@ interface Command
 }
 
 
-
 //Concrete Command
 class LightOnCommand implements Command
 {

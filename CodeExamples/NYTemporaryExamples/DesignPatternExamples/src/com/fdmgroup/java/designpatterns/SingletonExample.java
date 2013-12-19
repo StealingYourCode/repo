@@ -2,13 +2,14 @@ package com.fdmgroup.java.designpatterns;
 
 class MySingleton {
 
-	private static MySingleton instance = new MySingleton();
+	private static MySingleton instance;
 
-	private MySingleton(){
-
-	}
+	private MySingleton(){	}
 	
 	public static MySingleton getInstance(){
+		
+		if(instance == null)
+			instance = new MySingleton();
 		
 		return instance;
 	}
@@ -20,6 +21,13 @@ class MySingleton {
 	public String anotherVeryImportantMethod(){
 		return "some text";
 	}	
+}
+
+class RunThings {
+	
+	public static void main(String[] args){
+		MySingleton.getInstance().anotherVeryImportantMethod();
+	}
 }
 
 
