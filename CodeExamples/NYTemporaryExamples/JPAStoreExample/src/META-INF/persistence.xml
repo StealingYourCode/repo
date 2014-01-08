@@ -6,21 +6,38 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	
 	<persistence-unit name="storepersistence">
 		<properties>
+		
+			<!--  http://docs.jboss.org/hibernate/core/3.3/reference/en/html/session-configuration.html -->
+		
 			<!-- Scan for annotated classes and Hibernate mapping XML files -->
 			<property name="hibernate.archive.autodetection" value="class, hbm" />
 
 			<!-- SQL stdout logging -->
 			<property name="hibernate.show_sql" value="false" />
 			<property name="hibernate.format_sql" value="true" />
-			<property name="use_sql_comments" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+			
+			<!-- SQL dialect -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
+			
+			<!--  Connection config -->
 			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
 			<property name="hibernate.connection.url"
 				value="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe" />
-			<property name="hibernate.connection.username" value="USER NAME" />
-			<property name="hibernate.connection.password" value="PASS WORD"/>
+			<property name="hibernate.connection.username" value="tatyanatsymbalenko" />
+			<property name="hibernate.connection.password" value="oracle101"/>
 
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- Set dialect of SQL -->
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			
+			<!-- Connection pooling config
+			
+			Docs:
+				http://www.mchange.com/projects/c3p0/index.html#hibernate-specific
+			Properties explained:
+				http://www.mchange.com/projects/c3p0/index.html#configuration_properties
+				
+			-->
 			<property name="hibernate.c3p0.min_size" value="2" />
 			<property name="hibernate.c3p0.max_size" value="3" />
 			<property name="hibernate.c3p0.timeout" value="300" />

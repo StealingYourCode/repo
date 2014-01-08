@@ -41,6 +41,6 @@ public class Department {
 	}
 	
 	public String toString(){
-		return id+": "+name;		
+		return "Department "+id+": "+name;		
 	}
 }

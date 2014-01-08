@@ -10,11 +10,35 @@ import javax.persistence.Query;
 
 public class Store {
 	
-	List<Product> inventory = new ArrayList<Product>();
-	List<Department> departments = new ArrayList<Department>();
+	static List<Product> inventory = new ArrayList<Product>();
+	static List<Department> departments = new ArrayList<Department>();
 	
-	public void printAll(){
-		/* ----- Print all ----- */
+	
+	
+	
+	public static void printDB(EntityManager em){
+	
+		/* ----- Sync Department and Product lists with DB ---- */
+		
+		
+		departments = null;
+		inventory = null;
+		
+		
+		Query query = em.createNativeQuery(
+				"SELECT * FROM JPA_DEPT", Department.class);
+
+		departments = (List<Department>)query.getResultList();
+
+		
+		query = em.createNativeQuery(
+				"SELECT * FROM JPA_PRODUCT", Product.class);
+
+		inventory = query.getResultList();
+		
+
+		/* ----- Lists are loaded from DB. Let's print them out. ----- */
+		
 
 		for(Department d : departments)
 			System.out.println(d.name);
@@ -24,73 +48,43 @@ public class Store {
 		
 	}
 	
+	
+	
 	public static void main(String[] args){
 
-		Store myStore = new Store();
-		
 		EntityManagerFactory emf = 
 			Persistence.createEntityManagerFactory("storepersistence");
 
 		EntityManager em = emf.createEntityManager();
 
+		/* ----- Insert a Department ----- */
+		
+		Department d = new Department("Fruit");
+		d.setID(1);
+		
+		departments.add(d);
 		
 		
-		/* ----- Get all departments ---- */
-		
-		
-		Query query = em.createNativeQuery(
-				"SELECT * FROM JPA_DEPT", Department.class);
-
-		myStore.departments = (List<Department>)query.getResultList();
-
-		
-
-		
-
-		/* ----- Departments are loaded ----- */
-		 
-		
-		query = em.createNativeQuery(
-				"SELECT * FROM JPA_PRODUCT", Product.class);
-
-		myStore.inventory = query.getResultList();
-		
-		
-		
-		
-		
-		/* ----- Inventory is loaded ----- */
-		
-		//myStore.printAll();
-
-		/* ----- Pineapples suddenly double in price ----- */
-
+		// Open transaction
 		em.getTransaction().begin();
 		
-		for(Product p : myStore.inventory) {
-			
-			if(p.itemName.equals("pineapple") )
-				p.setDollarPrice(p.getDollarPrice() * 2);
-			
-		}
+		em.persist(d);
 		
-		// Commit to make a change
 		em.getTransaction().commit();
+	
 		
+		/* ----- Insert a Product ----- */
 		
-		/* ----- New shipment of diamond rings ----- 
-
 		
 		Product p = new Product();
 		
-		p.setItemID(2);
-		p.setDollarPrice(1000);
-		p.setItemName("diamond ring");
-		p.setQuantityInStock(50);
-		p.setDept(myStore.departments.get(1));
+		p.setItemID(1);
+		p.setDollarPrice(10);
+		p.setItemName("pineapple");
+		p.setQuantityInStock(1);
+		p.setDept(departments.get(0));
 		
-		myStore.inventory.add(p);
-		
+		inventory.add(p);
 		
 		em.getTransaction().begin();
 		
@@ -99,14 +93,69 @@ public class Store {
 		em.getTransaction().commit();
 		
 		
-
-		//myStore.printAll();
-
-		/* ---- */
+		
+		/* ----- Insert another Department ----- */
+		
+		Department d2 = new Department("Jewelry");
+		d2.setID(2);
+	
+		departments.add(d2);
 		
 		em.getTransaction().begin();
 		
-		for(Product product : myStore.inventory)
+		em.persist(d2);
+		
+		em.getTransaction().commit();
+	
+		
+		
+		/* ----- Populate lists with data from DB and print ----- */
+
+		printDB(em);
+		
+		
+		/* ----- Pineapples suddenly double in price ----- */
+
+		em.getTransaction().begin();
+		
+		for(Product prod : inventory) {
+			
+			if(prod.itemName.equals("pineapple") )
+				prod.setDollarPrice(prod.getDollarPrice() * 2);
+			
+		}
+		
+		em.getTransaction().commit();
+		
+		
+		/* ----- New shipment of diamond rings ----- */
+
+		
+		Product p2 = new Product();
+		
+		p2.setItemID(2);
+		p2.setDollarPrice(1000);
+		p2.setItemName("diamond ring");
+		p2.setQuantityInStock(50);
+		p2.setDept(departments.get(1));
+		
+		inventory.add(p2);
+		
+		
+		em.getTransaction().begin();
+		
+		em.persist(p);
+		
+		em.getTransaction().commit();
+		
+
+
+		
+		/* ----- Sale on diamond rings ----- */
+		
+		em.getTransaction().begin();
+		
+		for(Product product : inventory)
 			if(product.getItemName().equals("diamond ring"))
 				product.setDollarPrice(1);
 		
@@ -115,24 +164,25 @@ public class Store {
 		
 		
 		
-		/* ----- Forget the diamonds ----- */
+		/* ----- No more diamond rings ----- */
 		
 		em.getTransaction().begin();
 		
-		for(Product product : myStore.inventory)
+		for(Product product : inventory)
 			if(product.getItemName().equals("diamond ring"))
 				em.remove(product);
 		
 		em.getTransaction().commit();
+
 		
+		/* ----- Populate lists with data from DB and print ----- */
+
+		printDB(em);
+		
+		/* ----- Close EntityManager and EntityManagerFactory when done ----- */
 		
 		em.close();
-		
-		// At this point,
-		// diamond ring is not in the DB
-		// but still in our program
-		// accessible through myStore.inventory
-		myStore.printAll();
+
 	}
 	
 }
