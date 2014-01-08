@@ -14,8 +14,6 @@ public class Store {
 	static List<Department> departments = new ArrayList<Department>();
 	
 	
-	
-	
 	public static void printDB(EntityManager em){
 	
 		/* ----- Sync Department and Product lists with DB ---- */
