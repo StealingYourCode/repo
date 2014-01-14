@@ -5,7 +5,7 @@ public class AppleMaker {
 
 	public static void main(String[] args) {
 		
-		// What will be the output from this line of code?
+		// What will be the output this line of code?
 		Apple myLunchApple = new FujiApple();
 		
 		
@@ -14,3 +14,4 @@ public class AppleMaker {
 	}
 
 }
+

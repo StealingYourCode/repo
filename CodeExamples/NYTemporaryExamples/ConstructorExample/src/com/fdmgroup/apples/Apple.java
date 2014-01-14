@@ -8,6 +8,8 @@ public class Apple {
 
 	public Apple(String color, String taste){
 		
+		// Implicit super() call 
+	
 		this.color = color;
 		this.taste = taste;
 		
@@ -15,7 +17,7 @@ public class Apple {
 	}
 	
 	
-//	
+
 //	public Apple() {
 //		
 //		this("apple-colored","like an apple");
