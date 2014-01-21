@@ -110,22 +110,15 @@ public class JDBC_Demo2
 	                	 String lname = br.readLine();
 	                	 System.out.println("ID: ");
 	                	 String id = br.readLine();
-	                	 
-	                	 //create update query
-	                	 String query2 = "UPDATE test1 " +
-	                	 				 "SET first_name = '"+fname+"',"+
-	                			             "last_name = '"+lname+"'"+
-	                	 		         " WHERE test_ID='"+id+"'";
-	                	 System.out.println(query2);
 	               
-	           
-	                	 //Use a different Statement object to do 
-	                	 //the update.	                	 
-	                	 Statement statement2 = conn.createStatement(
-	         	        		ResultSet.TYPE_SCROLL_SENSITIVE,
-	         	        	    ResultSet.CONCUR_UPDATABLE);
-	                	 statement2.executeUpdate(query2);	                	
-	                	
+	                	 // We can update the values of the current row 	 
+	                	 rs.updateInt(1, Integer.parseInt(id));
+	                	 rs.updateString(2, fname);
+	                	 rs.updateString(3, lname);
+	                	 
+	                	 // This commits the change
+	                	 rs.updateRow();
+	                	 
 	                 }
 	              } catch (IOException ioe) {
 	                 System.out.println("IO error trying to read your entry");

@@ -52,7 +52,7 @@ public class JDBC_Demo3
 	        		ResultSet.TYPE_SCROLL_SENSITIVE,
 	        	    ResultSet.CONCUR_UPDATABLE);
 	       
-	        //Johnny's last name is null
+	        // Select everyone with age null
 	        String query = "SELECT * FROM test1 WHERE AGE IS NULL";
 	        
 	        // Get a ResultSet from executing SELECT query
@@ -72,19 +72,21 @@ public class JDBC_Demo3
 	        			rs.getInt("Age")
     			);
 	        	
-	        	//CORRECT
+
+    			// Same situation with the Integer class
+	        	System.out.print(		        		
+	        			rs.getString("FIRST_NAME")+" "+
+	        			rs.getString("LAST_NAME")+" ");	        			
+	        	Integer age2 = new Integer(rs.getInt("Age")); //wrappers
+    			System.out.println("Integer: "+age2);
+	        	
+	        	//Using BigDecimal
 	        	System.out.print(		        		
 	        			rs.getString("FIRST_NAME")+" "+
 	        			rs.getString("LAST_NAME")+" ");	        			
 	        	BigDecimal age = rs.getBigDecimal("Age"); //wrappers
     			System.out.println("Big Decimal: "+age);
     			
-    			//Using Integer
-	        	System.out.print(		        		
-	        			rs.getString("FIRST_NAME")+" "+
-	        			rs.getString("LAST_NAME")+" ");	        			
-	        	Integer age2 = new Integer(rs.getInt("Age")); //wrappers
-    			System.out.println("Integer: "+age2);
 	        }
 	      
 		} catch (SQLException sqle) {

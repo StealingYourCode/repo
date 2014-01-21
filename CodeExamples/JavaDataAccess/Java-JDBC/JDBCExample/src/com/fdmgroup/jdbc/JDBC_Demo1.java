@@ -59,12 +59,17 @@ public class JDBC_Demo1 {
 	        // While loop gets this done	      
 	        while(rs.next()) {
 	        	
+	        	
 	        	System.out.println(	
 	        			rs.getInt("test_ID")+" "+
 	        			rs.getString("FIRST_NAME")+" "+
-	        			rs.getString("LAST_NAME")
+	        			rs.getString("LAST_NAME") +" "+
+	        			rs.getBigDecimal("age")
     					);	        	
+	        
+	        
 	        }
+	        
 	        
 	        
 	        
