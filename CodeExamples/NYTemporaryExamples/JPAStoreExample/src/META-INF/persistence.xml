@@ -22,11 +22,11 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
 			<property name="hibernate.connection.url"
 				value="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe" />
-			<property name="hibernate.connection.username" value="-----USERNAME-----" />
+			<property name="hibernate.connection.username" value="-----USERNAME" />
 			<property name="hibernate.connection.password" value="-----PASSWORD-----"/>
 
-			<!-- Set dialect of SQL -->
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<!--validate, create, create-drop, update -->
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
 			
 			<!-- Connection pooling config	-->
 			<property name="hibernate.c3p0.min_size" value="2" />
