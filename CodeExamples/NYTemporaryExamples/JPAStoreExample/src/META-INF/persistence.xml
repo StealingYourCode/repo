@@ -22,8 +22,8 @@ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 			<property name="hibernate.connection.driver_class" value="oracle.jdbc.driver.OracleDriver" />
 			<property name="hibernate.connection.url"
 				value="jdbc:oracle:thin:@oracle.fdmgroup.com:1521:xe" />
-			<property name="hibernate.connection.username" value="tatyanatsymbalenko" />
-			<property name="hibernate.connection.password" value="oracle101"/>
+			<property name="hibernate.connection.username" value="-----USERNAME-----" />
+			<property name="hibernate.connection.password" value="-----PASSWORD-----"/>
 
 			<!-- Set dialect of SQL -->
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
