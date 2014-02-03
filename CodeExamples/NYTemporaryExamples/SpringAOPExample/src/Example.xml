@@ -27,7 +27,7 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 	  
 	   		<aop:before pointcut-ref="everything" method="displayEntry" />
 	   		<aop:before pointcut-ref="method2Only" method="displayEntryMethod2" />
-	   		<aop:after pointcut-ref="returnTypeClassBAnyClass" method="displayReturnClassB" />
+	   		<aop:after pointcut-ref="returnTypeClassBInAnyClass" method="displayReturnClassB" />
 	
 		<!-- <aop:around pointcut-ref="everything" method="aroundCall"/> -->
 			
