@@ -1,6 +1,6 @@
 package com.fdmgroup.inners.methodlocal;
 
-class CoolSuperclass{ 
+class Item { 
 	
 	public void saySomething(String s) {
 		
@@ -10,31 +10,14 @@ class CoolSuperclass{
 
 public class Outer {
 	
-	public void otherMethod(){
-		
-		class LocalInner {
-			
-			class Innerer {
-				
-			}
-			
-			int x = 1;
-		}
-		
-	}
+
 	
-	public void otherOtherMethod(){
-		class LocalInner {
-			
-		}
-	}
-	
-	public CoolSuperclass someMethod(){
+	public Item someMethod(){
 		
 	    final int number = 16;
 		final String flower = "tulip";
 		
-		class LocalInner extends CoolSuperclass{
+		class LocalInner extends Item {
 			
 			public String name = flower;
 			public void specialLocalInnerMethod(){ }
@@ -66,11 +49,16 @@ public class Outer {
 		
 	}
 
+	
+	public void anotherMethod(){
+		// What if this method has another local inner class?
+	}
+
 	public static void main(String[] args){
 		
 		new Outer().someMethod();
 		
-		CoolSuperclass cs = new Outer().someMethod();
+		Item cs = new Outer().someMethod();
 		
 		cs.saySomething("hello!");
 

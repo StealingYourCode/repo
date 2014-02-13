@@ -5,36 +5,31 @@ abstract class Popcorn {
 	public void pop() {
 		System.out.println("standard popcorn");
 	}
-
-
 }
 
 
 public class Outer {
 		
-	static void popSomeCorn(Popcorn p) { /* do things */ }
+	static void popSomeCorn(Popcorn p) { /* Regular method */ }
 	
 	public static void main(String[] args) {
 				
-		/* Popcorn reference to an instance of a 
+		/* Popcorn reference to an instance of an anonymous 
 		   subclass of Popcorn: */
-		
 		Popcorn p1 = new Popcorn() {  };
-		
 		
 		Popcorn p = new Popcorn(){
 
 
 			// Note that will never be able to access this 
-			// method from outside of the class, so you can
-			// only put helper methods in anon inner classes.
+			// method from outside of the class
 			public void coolMethod() {
 				// does things
 			}
 			
 			@Override
 		    public void pop() {
-		    	
+		    	// We can use a helper method
 		    	coolMethod();
 		        System.out.println("anonymous popcorn");
 		    }
@@ -45,16 +40,15 @@ public class Outer {
 		 popSomeCorn(p);
 		 p.pop();
 		 
-		
 
 		// Passing an anon inner class object 
-		// into a method argument
-		
+		// into a method argument:
+		 
 		popSomeCorn(
 			new Popcorn(){
-				public void pop() { // special implementation
+				public void pop() { // override
 				}
-				public void cook(){}
+				public void cook(){ }
 			}
 		);
 		
@@ -62,39 +56,9 @@ public class Outer {
 	}
 }
 
+/* Can we do the same with an interface? */
 
-//
-//
 //interface Cookable {
 //	
-//	public void cook();
-//	
-//	
-//	
+// public void cook();	
 //}
-//
-//	//cookSomething(p);
-//	
-//	
-//	/* Cookable reference to an instance of a
-//	   class implementing Cookable: */
-//	 
-//	Cookable c = new Cookable() {
-//		
-//		public void clean(){}
-//		
-//	    public void cook() {
-//	        System.out.println("anonymous cookable implementer");
-//	     }
-//	};
-//	
-//	cookSomething(c);	
-//	c.cook();
-//
-//
-//
-//cookSomething( 
-//		new Cookable(){
-//			public void cook(){ // special implementation
-//			}
-//		});

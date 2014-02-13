@@ -3,23 +3,26 @@ package com.fdmgroup.inners.instance;
 
 public class Outer {
 
-	private String password = "outer password !!!";
+	private String password = "outer password";
 	
 	public void go(){
 		
 		// Creating an instance of inner from instance of outer
 		Inner i = new Inner();
-		
-
 	}
 	
+	public static void staticGo(){
+
+		// Creating instance of inner from static context
+		Outer.Inner i = new Outer().new Inner();
+	}	
 	
-	// INNER CLASS
+	
 	public class Inner {
 		
 		private String innerPassword = "password";
 		
-		// THIS FAILS
+		// Cannot have static members unless they are constants:
 		// public static String specialStuff = "coffee";
 		
 		
@@ -34,17 +37,8 @@ public class Outer {
 			this.innerPassword = "";
 		}
 		
-	}
-	
-	// INNER CLASS END
-	
-	
-	public static void staticGo(){
-
-		// Creating instance of inner from static context
-		Outer.Inner i = new Outer().new Inner();
-		
 	}	
+
 }
 
 
@@ -58,13 +52,8 @@ class SomeOtherClass {
 		
 		Outer myOuter = new Outer();
 		
-		// code
-		
-		// more code
-		
 		Outer.Inner myInner = myOuter.new Inner();
 		
-		//myOuter = null;
 		myInner.innerGo();
 		
 		Outer.Inner myOtherInner = myOuter.new Inner();

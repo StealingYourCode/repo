@@ -4,15 +4,16 @@ import static com.fdmgroup.inners.statics.Outer.Inner;
 
 public class Outer {
 
-	public static void staticGo(){
+	static void outerStaticMethod(){
 		
 	}
 	
-	public void go(){
+	public void outerInstanceMethod(){
 		
 		Inner myInstance = new Inner();
-		// Can access private member of static inner
-		myInstance.innerGo();
+		
+		// We can access private members of static inner here
+		myInstance.innerInstanceMethod();
 		
 	}
 	
@@ -20,9 +21,10 @@ public class Outer {
 		
 		public int magic_number = 8324;
 		
-		private void innerGo(){
-			// Do something
-			staticGo();
+		private void innerInstanceMethod(){
+			
+			// We can access static members of outer class
+			outerStaticMethod();
 		}
 	}
 
@@ -33,31 +35,26 @@ class SomeOtherClass {
 	
 	void someOtherMethod(){
 
-		// Without regular import, in another package
-//		com.fdmgroup.inners.statics.Outer.Inner instance = 
-//				new com.fdmgroup.inners.statics.Outer.Inner();
-//		
+		// If we were in another package entirely:
+		// Without using import
+		// com.fdmgroup.inners.statics.Outer.Inner instance = 
+		//	new com.fdmgroup.inners.statics.Outer.Inner();
+				
 		// Creating an instance outside of the outer class
-		// without static import
+		// without static import:
 
 		Outer.Inner myInstance = new Outer.Inner(); 
-	
 		
-		// Instance Inner creation
-		//Outer.Inner myInstance = new Outer().new Inner();
-		
-		// Creating an instance outside of the outer class
-		// with static import -- can use name of inner class directly!
-		//
+		// With static import -- can use name of inner class directly!
 		Inner myOtherInstance = new Inner();
+		
+		// What if this was an instance inner class? 
+		// Do you remember how to instantiate one from here?
+		
+
 	}
 	
-	public static void main(String[] args){
 
-		int x = 5 * 4 % 3;
-		System.out.println(x);   
-
-	}
 }
 
 
