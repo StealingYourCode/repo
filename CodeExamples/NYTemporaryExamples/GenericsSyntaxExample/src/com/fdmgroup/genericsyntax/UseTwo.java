@@ -1,9 +1,12 @@
 package com.fdmgroup.genericsyntax;
 
-public class UseTwo<T, X> {
+import java.util.List;
+
+public class UseTwo<T,X> {
 
 	T	one;
 	X	two;
+
 
 	UseTwo(T one, X two) {
 
@@ -11,6 +14,7 @@ public class UseTwo<T, X> {
 		this.two = two;
 	}
 
+	
 	T getT() {
 
 		return one;
@@ -20,13 +24,12 @@ public class UseTwo<T, X> {
 
 		return two;
 	}
-
 	
 	// test it by creating it with <String, Integer>
 
 	public static void main(String[] args) {
 
-		UseTwo<String, Integer> twos = new UseTwo<String, Integer>("foo", 42);
+		UseTwo<String, Integer> twos = new UseTwo<String, Integer>("hello",42);
 
 		String theT = twos.getT(); // returns a String
 		int theX = twos.getX(); // returns Integer, unboxes to int
