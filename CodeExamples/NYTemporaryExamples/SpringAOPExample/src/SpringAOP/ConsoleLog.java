@@ -1,8 +1,9 @@
 package SpringAOP;
 
+
 // ADVICE
 public class ConsoleLog {
-	
+
 	public void displayEntry()
 	{
 		System.out.println("Entering a method...");

@@ -18,7 +18,7 @@ public class ClassB {
 	
 	public ClassB getInstance()
 	{
-		System.out.println("Class B Being Created!");
+		System.out.println("Class B: Class B Being Created!");
 		return new ClassB();
 	}
 }

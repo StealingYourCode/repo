@@ -2,7 +2,7 @@ package SpringAOP;
 
 public class ClassA {
 
-	public void method1()
+	public void flimFlam()
 	{
 		System.out.println("Class A method1 actual action.");
 	}
@@ -23,7 +23,7 @@ public class ClassA {
 
 	public ClassB getBInstance()
 	{
-		System.out.println("Class B Being Created!");
+		System.out.println("Class A: Class B Being Created!");
 		return new ClassB();
 	}
 

@@ -23,8 +23,11 @@ public class SpringAOPMain {
 //		a.method2();
 
 		
-		b.method1();
-		b.method2();
+//		b.method1();
+//		b.method2();
+		
 //		a.getBInstance();
+		b.getInstance();
+		
 	}
 }
