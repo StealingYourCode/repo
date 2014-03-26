@@ -9,10 +9,8 @@ class Item {
 }
 
 public class Outer {
-	
-
-	
-	public Item someMethod(){
+		
+	public void someMethod(){
 		
 	    final int number = 16;
 		final String flower = "tulip";
@@ -25,9 +23,8 @@ public class Outer {
 			@Override
 			public void saySomething(String something){
 				
-				// Can we use num or flower here?
+				// Can we use number or flower here?
 				
-				// String s = flower;
 				int i = number;
 			
 				System.out.println(something);
@@ -42,26 +39,22 @@ public class Outer {
 		myInstance.saySomething(flower + " is a flower.");
 		myInstance.saySomething(number + " is a number.");
 		
-		// What are the implications of returning a 
-		// local inner class object?
-		
-		return myInstance;
+		// What if we return a local inner class object?
 		
 	}
 
 	
 	public void anotherMethod(){
-		// What if this method has another local inner class?
+		
+		// What if this method has another local inner class
+		// with the same name?
 	}
+
 
 	public static void main(String[] args){
 		
 		new Outer().someMethod();
 		
-		Item cs = new Outer().someMethod();
-		
-		cs.saySomething("hello!");
-
 	}
 
 	
