@@ -6,18 +6,20 @@ public class Outer {
 	private String password = "outer password";
 	
 	public void go(){
-		
+		// we have an instance of Outer
+		// we can access it with "this"
 		Inner i = new Inner();
 	}
 	
 	public static void staticGo(){
 
 		Inner i = new Outer().new Inner();
-		
 	}	
 	
 	
-	public class Inner {
+	
+	
+	public class Inner{
 		
 		private String innerPassword = "password";
 		
@@ -37,6 +39,7 @@ public class Outer {
 			
 			// "this" refers to inner instance
 			this.innerPassword = "";
+			
 		}
 		
 	}	
