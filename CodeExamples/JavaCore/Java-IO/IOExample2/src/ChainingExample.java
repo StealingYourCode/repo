@@ -1,6 +1,6 @@
 import java.io.*;
 
-class chainingExample 
+public class ChainingExample 
 {
   public static void main(String [] args) 
   {
