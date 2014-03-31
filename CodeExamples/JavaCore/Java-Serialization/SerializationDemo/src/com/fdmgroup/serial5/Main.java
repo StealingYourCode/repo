@@ -1,9 +1,13 @@
-/* Demo 4 - Demonstrates what happens when we serialize an object with a
- * serializable superclass.  Then subclass will be deserialized and returned to the state it
- * was in prior to serialization. 
+/* Demo 5 - Demonstrates what happens when superclass is not serializable but
+ * subclass is.  Then subclass will be deserialized and returned to the state it
+ * was in prior to serialization. But any variables it inherits from the nonserializable
+ * superclass, will be reinitialized just as if you were making a new object. 
+ * I.E. The constructor will run for the nonserializable superclass.
+ * But it's important to remember that the JVM will only run the default constructor
+ * for the superclass - so you must HAVE one.
 */
 
-package com.fdmgroup.serial4;
+package com.fdmgroup.serial5;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

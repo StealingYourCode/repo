@@ -1,8 +1,9 @@
-package com.fdmgroup.serial4;
+package com.fdmgroup.serial5;
 
 import java.io.Serializable;
 
-/*Note that this version of Animal IS serializable.*/
+/*Note that this version of Animal is NOT serializable. 
+ * It is also the superclass of Mammal, which IS serializable.*/
 
 public class Animal  implements Serializable
 {

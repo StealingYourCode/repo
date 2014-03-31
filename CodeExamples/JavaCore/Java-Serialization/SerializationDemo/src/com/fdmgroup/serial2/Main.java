@@ -1,4 +1,4 @@
-/*Demo 2 - Serialization of an object whose instance variables are themselves
+/* Demo 2 - Serialization of an object whose instance variables are themselves
  * references to objects.  See the difference when the instance variables are/aren't 
  * serializable.
  * 

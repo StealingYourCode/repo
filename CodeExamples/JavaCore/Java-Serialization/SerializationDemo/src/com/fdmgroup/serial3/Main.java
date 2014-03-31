@@ -1,4 +1,4 @@
-/*Demo 3 - We've seen that if an instance variable's class is not serializable,
+/* Demo 3 - We've seen that if an instance variable's class is not serializable,
  * we will get a NotSerializableException. We can get around this by making it 
  * serializable.  However, if we don't have access to the class, what can we do?
  * Answer: 
