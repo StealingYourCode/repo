@@ -1,3 +1,4 @@
+package com.fdmgroup.serialization;
 import java.io.Serializable;
 
 

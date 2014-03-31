@@ -10,8 +10,8 @@ public class MixingData
 	public static void main(String[] args) {
 		
 		File file1 = new File("mixing.txt");
-		try 
-		{
+		
+		try {
 			DataOutputStream dos = new DataOutputStream(new FileOutputStream(file1));
 			DataInputStream dis = new DataInputStream(new FileInputStream(file1));
 			dos.writeInt(125);
