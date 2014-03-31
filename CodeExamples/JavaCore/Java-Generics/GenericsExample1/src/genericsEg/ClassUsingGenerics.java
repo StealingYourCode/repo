@@ -1,12 +1,18 @@
+/* First demo of generics - very basic.  See that we can 
+ * instantiate different different GenericsExample objects, 
+ * but each will only work with one type of object.  
+ * 
+ * See that if I change the GenericsExample class to be 
+ * <T extends User> then the compiler no longer lets me 
+ * create a GenericExample instance for anything other than
+ * a User or it's subtype. 
+ * */
+
 package genericsEg;
 
-import java.util.ArrayList;
 
 public class ClassUsingGenerics {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		GenericsExample<String> genericString = new GenericsExample<String>();
 		GenericsExample<Integer> genericInteger = new GenericsExample<Integer>();
@@ -17,9 +23,7 @@ public class ClassUsingGenerics {
 		genericInteger.display(27);
 		genericUser.display(myUser);
 		genericUser.display(new User("Chris","Where are you going?"));
-		
-		
-		
+			
 	}
 
 }
