@@ -21,7 +21,7 @@ public class Animal implements Serializable
 	{
 		try
 		{
-			os.defaultWriteObject();	//request JVM to do normal serialization process
+			os.defaultWriteObject();		//request JVM to do normal serialization process
 			os.writeInt(home.getNumber()); //then, manually write the int that we will  
 		}								   //need to recreate the Home object
 		catch (IOException e)
@@ -36,7 +36,7 @@ public class Animal implements Serializable
 		{
 			is.defaultReadObject();		//do the normal deserialization process
 			home = new Home(is.readInt());  //then, manually read the int that we 
-			}								//will need to recreate the Home Object.  
+		}								//will need to recreate the Home Object.  
 		catch(IOException e)				//Then make a new home object
 		{
 			e.printStackTrace();

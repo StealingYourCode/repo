@@ -2,7 +2,7 @@ package com.fdmgroup.serial2;
 
 import java.io.Serializable;
 
-public class Home //implements Serializable
+public class Home implements Serializable
 {
 	private int number;
 	

@@ -12,12 +12,12 @@ public class Main
 	public static void main(String[] args)
 	{
 		//create animal to serialize
-		Animal a1 = new Animal("First Animal");
+		Animal a1 = new Animal("Zebra");
 		Animal a2 = null;	
 		
 		try
 		{
-			//serialize object
+			// Serialize object
 			FileOutputStream fs = new FileOutputStream("animals.txt"); //give file name
 			ObjectOutputStream os = new ObjectOutputStream(fs); //make objectoutputstream using your fileoutputstream			
 			os.writeObject(a1);		

@@ -24,7 +24,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		//create animal to serialize
-		Animal a1 = new Animal("First Animal",new Home(5));
+		Animal a1 = new Animal("Frog",new Home(5));
 		Animal a2 = null;	
 			
 		try
