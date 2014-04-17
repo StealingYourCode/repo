@@ -16,25 +16,29 @@ public class Outer {
 		Inner i = new Outer().new Inner();
 	}	
 	
-	
-	
-	
-	public class Inner{
+
+	public class Inner {
 		
 		private String innerPassword = "password";
 		
 		// Cannot have static members unless they are constants!
-		// public static String specialStuff = "coffee";
+		//public static String specialStuff = "coffee";
+		
+		
 		
 		public void innerGo(){
 			
+			// Outer's static method			
 			staticGo();
 			
+			// Outer's instance method
 			go();
 			
+			// Outer's instance variable
 			System.out.println(password);
 			
-			// Outer.this refers to the associated Outer instance
+			// Outer's instance variable through 
+			// "Outer.this" reference 
 			Outer.this.password = "";
 			
 			// "this" refers to inner instance

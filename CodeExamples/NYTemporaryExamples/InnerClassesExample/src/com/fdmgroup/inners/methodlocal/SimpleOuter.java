@@ -11,17 +11,20 @@ class Module {
 class Machine {
 	
 	Module module;  // HAS-A
+
 	
 }
 
 
 public class SimpleOuter {
 
-	
+	// This is a method
 	public Machine setUpMachine(Machine machine){
 		
 
 		class TeaMakingModule extends Module {
+			
+			// This is an override!
 			void execute(){
 				System.out.println("Making tea...");
 			}

@@ -1,33 +1,35 @@
 package com.fdmgroup.inners.methodlocal;
 
-class Item { 
+interface Item { 
 	
-	public void saySomething(String s) {
-		System.out.println("hi");
-	}
+	public void saySomething();
 }
 
 public class Outer {
 		
 	public Item someMethod(){
 		
-		class LocalInner extends Item {
-			
-			public void go(){
-				//some stuff
+		// local to someMethod()
+		int x = 3;
+		
+		class LocalInner implements Item {
+			public void hello(){
+				// helper
 			}
 			
-			@Override
-			public void saySomething(String something){
-				System.out.println(something);
+			public void saySomething() {
+				
+				hello();
+				System.out.println("Hi from LocalInner!");
 			}
+			
 		}
 		
 		/* Can instantiate it the usual way, 
 		   as long as it comes after class definition */
 		
 		LocalInner myInstance = new LocalInner();
-		myInstance.saySomething("hello");
+		myInstance.saySomething();
 		
 		return myInstance;
 		
@@ -38,12 +40,18 @@ public class Outer {
 		
 		// What if this method has another local inner class
 		// with the same name?
+		
+		class LocalInner {
+			
+		}
+	
 	}
 
 
 	public static void main(String[] args){
 		
-		Item myItem = new Outer().someMethod();
+		Item item = new Outer().someMethod();
+		item.saySomething();
 		
 	}
 

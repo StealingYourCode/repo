@@ -20,10 +20,12 @@ public class Outer {
 
 			@Override
 		    public void pop() {
+
 		        System.out.println("anonymous popcorn");
 		    }
+			
+			// Can we have other methods here?
 
-			// Can we have other methods in this class?
 		};	
 		
 		
@@ -31,11 +33,17 @@ public class Outer {
 		 popSomeCorn(p);
 		 p.pop();
 		 
+		 
 		
 		 
 		 // What if we have an anon inner class 
 		 // that doesn't override any methods?
 
+		 
+		 
+		 Popcorn p2 = new Popcorn(){};
+		 p2.pop();
+		 
 		 // Passing an anon inner class object 
 		 // directly into a method argument:
 		 
@@ -48,6 +56,14 @@ public class Outer {
 			}
 		);	
 		
+		 
+		Cookable cookable = new Cookable(){ 
+			public void cook(){
+				//give cook() a body
+			}
+			
+		};
+		 
 	}
 }
 
@@ -57,3 +73,15 @@ interface Cookable {
 	
 	public void cook();	
 }
+
+
+
+
+
+
+
+
+
+
+
+

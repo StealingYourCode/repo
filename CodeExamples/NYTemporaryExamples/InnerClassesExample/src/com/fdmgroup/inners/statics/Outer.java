@@ -1,30 +1,27 @@
 package com.fdmgroup.inners.statics;
 
-import static com.fdmgroup.inners.statics.Outer.Inner;
+import static com.fdmgroup.inners.statics.Outer.StaticInnerClass;
+
 
 public class Outer {
 
-	static void outerStaticMethod(){
-		
-	}
+	private static String secrets = "secrets";
 	
-	public void outerInstanceMethod(){
-		
-		Inner myInstance = new Inner();
-		
-		myInstance.innerInstanceMethod();  // private method
-		
-	}
 	
-	public static class Inner {
+	public void method(){
+		 int x = StaticInnerClass.innerSecrets + 2;
+	}
+
+	
+	public static class StaticInnerClass {
 		
-		public int magic_number = 8324;
+		private static int innerSecrets = 8324;
 		
 		private void innerInstanceMethod(){
 			
 			// We can access static members of outer class
-			outerStaticMethod();
-	
+			Outer.secrets.toString();
+			
 		}
 	}
 
@@ -33,15 +30,52 @@ public class Outer {
 
 class SomeOtherClass {
 	
+	public static class StaticInnerClass{}
+	
 	void someOtherMethod(){
 
 	
 		// Creating an instance outside of the outer class
-		Outer.Inner myInstance = new Outer.Inner(); 
+		Outer.StaticInnerClass myInstance = new Outer.StaticInnerClass(); 
+		
+		
+		StaticInnerClass myOtherInstance = new StaticInnerClass();
+
+		
+		
+		/* 
+		 
+		import com.mockito.Mockito;
+		
+		Without: 
+				com.mockito.Mockito myInstance = new com.mockito.Mockito();
+				com.mockito.Mockito.mock();
+				com.mockito.Mockito.stub();
+		With:   
+				Mockito myInstance = new Mockito();
+				Mockito.mock();
+				Mockito.stub();
+		
+		
+		import static com.mockito.Mockito.*;
+		
+		Without:
+		
+				com.mockito.Mockito.mock();
+				com.mockito.Mockito.stub();
+				
+		With:
+				mock();
+				stub();
+		
+		*/
+		
+		
+		
 		
 		// With static import -- can use name of inner class directly!
-		Inner myOtherInstance = new Inner();
-		
+		// Inner myOtherInstance = new Inner();
+		 
 		// Remember how to instantiate an instance inner class? 
 
 	}
