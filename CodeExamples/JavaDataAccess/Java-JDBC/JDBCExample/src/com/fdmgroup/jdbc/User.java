@@ -2,7 +2,7 @@ package com.fdmgroup.jdbc;
 
 public class User 
 {
-	private int id;
+	private int test_Id;
 	private String first_name;
 	private String last_name;
 	private int age;
@@ -11,17 +11,18 @@ public class User
 	
 	User(int id, String fn, String ln, int age)
 	{
-		this.id = id;
+		this.test_Id = id;
 		this.first_name = fn;
 		this.last_name = ln;
 		this.age = age;
 	}
 	
-	public int getId() {
-		return id;
+
+	public int getTest_Id(){
+		return test_Id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setTest_Id(int test_Id){
+		this.test_Id = test_Id;
 	}
 	public String getFirst_name() {
 		return first_name;
