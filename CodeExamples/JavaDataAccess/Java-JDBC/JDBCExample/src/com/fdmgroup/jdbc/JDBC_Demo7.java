@@ -96,6 +96,7 @@ public class JDBC_Demo7
 			conn = DriverManager.getConnection(url,username,password);
 					
 			String query = getQuery("readUser");
+			System.out.println("query: "+query);
 			
 			// Get a PreparedStatement object	       	        			     
 	        PreparedStatement statement = conn.prepareStatement(query);	        	       
@@ -175,7 +176,7 @@ public class JDBC_Demo7
 		
 		JDBC_Demo7 demo = new JDBC_Demo7();
 		User user = demo.readUser(2);
-		System.out.println("User id: "+user.getId());
+		System.out.println("User id: "+user.getTest_Id());
 		System.out.println("User first name: "+user.getFirst_name());
 		System.out.println("User last name: "+user.getLast_name());
 		System.out.println("User age: "+user.getAge());
