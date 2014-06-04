@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServletInitParamFilterListenerExample</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>company</param-name>
+    <param-value>FDM</param-value>
+  </context-param>
+  <context-param>
+    <param-name>admin_email</param-name>
+    <param-value>email@email.com</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>Very First Servlet</servlet-name>
+    <servlet-class>com.fdmgroup.examples.servlets.FirstServlet</servlet-class>
+    <init-param>
+      <param-name>servlet_number</param-name>
+      <param-value>1</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Very First Servlet</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>Boots</filter-name>
+    <filter-class>com.fdmgroup.example.filters.BootsFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Boots</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>Hat</filter-name>
+    <filter-class>com.fdmgroup.example.filters.HatFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Hat</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>
+	 	com.fdmgroup.example.listeners.MyServContextListener 
+	  </listener-class>
+  </listener>
+</web-app>
