@@ -22,7 +22,7 @@ public class JDBC_Demo1 {
 	
 	public JDBC_Demo1(){
 	
-		properties = PropertiesLoader.getProperties("real.properties");
+		properties = PropertiesLoader.getProperties("fake.properties");
 	
 		if (properties != null) {
 			
@@ -43,7 +43,8 @@ public class JDBC_Demo1 {
 	        
 			// Get a connection object -- this could fail!
 			conn = DriverManager.getConnection(url,username,password);
-		    
+	
+			
 			// Get a statement object
 	        Statement statement = conn.createStatement();
 	       
@@ -53,10 +54,9 @@ public class JDBC_Demo1 {
 	        ResultSet rs = statement.executeQuery(query);
 	        
 	        
-	     
-	        
 	        // Must call rs.next() to get first row! 
 	        // While loop gets this done	      
+	        
 	        while(rs.next()) {
 	        	
 	        	

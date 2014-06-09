@@ -25,7 +25,7 @@ public class JDBC_Demo6
 	
 	public JDBC_Demo6(){
 	
-		properties = PropertiesLoader.getProperties("real.properties");
+		properties = PropertiesLoader.getProperties("fake.properties");
 	
 		if (properties != null) {
 			
@@ -57,6 +57,7 @@ public class JDBC_Demo6
         	
 	        statement.execute();
 	        int average = statement.getInt(1);
+	        //String avg = statement.getString(1);
 	        System.out.println(average);	        
 	       	        
 		} catch (SQLException sqle) {

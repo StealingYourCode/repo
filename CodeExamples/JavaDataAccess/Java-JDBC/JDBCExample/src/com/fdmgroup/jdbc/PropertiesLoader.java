@@ -16,6 +16,7 @@ public class PropertiesLoader {
 		try {
 			properties = new Properties();
 			fileIS = new FileInputStream(filename);	
+			
 			properties.load(fileIS);
 			fileIS.close();
 		}

@@ -25,7 +25,7 @@ public class JDBC_Demo3
 	
 	public JDBC_Demo3(){
 	
-		properties = PropertiesLoader.getProperties("real.properties");
+		properties = PropertiesLoader.getProperties("fake.properties");
 	
 		if (properties != null) {
 			
@@ -53,7 +53,7 @@ public class JDBC_Demo3
 	        	    ResultSet.CONCUR_UPDATABLE);
 	       
 	        // Select everyone with age null
-	        String query = "SELECT * FROM test1 WHERE AGE IS NULL";
+	        String query = "SELECT * FROM test1";
 	        
 	        // Get a ResultSet from executing SELECT query
 	        ResultSet rs = statement.executeQuery(query);
@@ -74,11 +74,12 @@ public class JDBC_Demo3
 	        	
 
     			// Same situation with the Integer class
-	        	System.out.print(		        		
-	        			rs.getString("FIRST_NAME")+" "+
-	        			rs.getString("LAST_NAME")+" ");	        			
-	        	Integer age2 = new Integer(rs.getInt("Age")); //wrappers
-    			System.out.println("Integer: "+age2);
+	        	//System.out.print(		        		
+	        	//		rs.getString("FIRST_NAME")+" "+
+	        	//		rs.getString("LAST_NAME")+" ");	        			
+	        	//Integer age2 = new Integer(rs.getInt("Age")); //wrappers
+	        	//Integer age2 = (Integer)rs.getObject("Age"); //wrappers
+    			//System.out.println("Integer: "+age2);
 	        	
 	        	//Using BigDecimal
 	        	System.out.print(		        		

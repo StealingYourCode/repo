@@ -31,7 +31,7 @@ public class JDBC_Demo2
 	
 	public JDBC_Demo2(){
 	
-		properties = PropertiesLoader.getProperties("real.properties");
+		properties = PropertiesLoader.getProperties("fake.properties");
 	
 		if (properties != null) {
 			
@@ -77,7 +77,7 @@ public class JDBC_Demo2
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	       
 	        System.out.println("\nSelect 'next','previous' or 'update'");
 	        
-	        while(rs.isLast() == false) {
+	        while(!rs.isLast()) {
 	        	String entry;
 
 	        	try {
