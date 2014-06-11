@@ -2,7 +2,7 @@ package com.examples.dao;
 
 import java.util.List;
 
-public interface Storage <T>{
+public interface Storage<T>{
 
 	public void create(T t);
 	public T read(T t);

@@ -1,6 +1,5 @@
 package com.examples.store;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,17 +9,12 @@ import javax.persistence.Query;
 
 public class Store {
 	
-	static List<Product> inventory = new ArrayList<Product>();
-	static List<Department> departments = new ArrayList<Department>();
 	
 	
 	public static void printDB(EntityManager em){
-	
-		/* ----- Sync Department and Product lists with DB ---- */
 		
-		
-		departments = null;
-		inventory = null;
+		List<Department> departments = null;
+		List<Product> inventory = null;
 		
 		
 		Query query = em.createNativeQuery(
@@ -29,17 +23,16 @@ public class Store {
 		departments = (List<Department>)query.getResultList();
 
 		
+		
 		query = em.createNativeQuery(
 				"SELECT * FROM JPA_PRODUCT", Product.class);
 
-		inventory = query.getResultList();
+		inventory = (List<Product>)query.getResultList();
 		
-
-		/* ----- Lists are loaded from DB. Let's print them out. ----- */
 		
-
+		
 		for(Department d : departments)
-			System.out.println(d.name);
+			System.out.println("\n"+d);
 		
 		for(Product p : inventory)
 			System.out.println("\n"+p);
@@ -50,137 +43,161 @@ public class Store {
 	
 	public static void main(String[] args){
 
+		/* Use Persistence to create EMF for storejpa */
+		
 		EntityManagerFactory emf = 
-			Persistence.createEntityManagerFactory("storepersistence");
+			Persistence.createEntityManagerFactory("storejpa");
 
+		/* Use EMF to create EM */
+		
 		EntityManager em = emf.createEntityManager();
 
-		/* ----- Insert a Department ----- */
 		
-		Department d = new Department("Fruit");
-		d.setID(1);
+		/* Inserting a Department */
 		
-		departments.add(d);
+		Department fruitDept = new Department("Fruit");
+		fruitDept.setID(1);
 		
 		
-		// Open transaction
+		
+		/* persist() call takes place inside a transaction */
+		
 		em.getTransaction().begin();
 		
-		em.persist(d);
+		em.persist(fruitDept);
 		
 		em.getTransaction().commit();
 	
 		
-		/* ----- Insert a Product ----- */
+		/* Inserting a Product */
 		
 		
-		Product p = new Product();
+		Product pineappleProduct = new Product();
 		
-		p.setItemID(1);
-		p.setDollarPrice(10);
-		p.setItemName("pineapple");
-		p.setQuantityInStock(1);
-		p.setDept(departments.get(0));
+		pineappleProduct.setItemID(1);
+		pineappleProduct.setDollarPrice(10);
+		pineappleProduct.setItemName("pineapple");
+		pineappleProduct.setQuantityInStock(1);
+		pineappleProduct.setDept(fruitDept);
 		
-		inventory.add(p);
+		
 		
 		em.getTransaction().begin();
 		
-		em.persist(p);
+		em.persist(pineappleProduct);
 		
 		em.getTransaction().commit();
 		
 		
 		
-		/* ----- Insert another Department ----- */
+		/* Inserting a second Department */
 		
-		Department d2 = new Department("Jewelry");
-		d2.setID(2);
-	
-		departments.add(d2);
-		
-		em.getTransaction().begin();
-		
-		em.persist(d2);
-		
-		em.getTransaction().commit();
-	
-		
-		
-		/* ----- Populate lists with data from DB and print ----- */
+		Department jewelryDept = new Department("Jewelry");
+		jewelryDept.setID(2);
 
+		
+		em.getTransaction().begin();
+		
+		em.persist(jewelryDept);
+		
+		em.getTransaction().commit();
+	
+		
+		
+		/* Shipment of diamond rings */
+
+		
+		Product ringProduct = new Product();
+		
+		ringProduct.setItemID(2);
+		ringProduct.setDollarPrice(1000);
+		ringProduct.setItemName("diamond ring");
+		ringProduct.setQuantityInStock(50);
+		ringProduct.setDept(jewelryDept);
+		
+		
+		em.getTransaction().begin();
+		
+		em.persist(ringProduct);
+		
+		em.getTransaction().commit();
+	
+		
+		
+		/* Printing out DB contents with a helper method. */ 
+	 	 
+		
 		printDB(em);
 		
 		
-		/* ----- Pineapples suddenly double in price ----- */
+		/* Pineapples double in price */  
 
-		em.getTransaction().begin();
-		
-		for(Product prod : inventory) {
-			
-			if(prod.itemName.equals("pineapple") )
-				prod.setDollarPrice(prod.getDollarPrice() * 2);
-			
-		}
-		
-		em.getTransaction().commit();
-		
-		
-		/* ----- New shipment of diamond rings ----- */
-
-		
-		Product p2 = new Product();
-		
-		p2.setItemID(2);
-		p2.setDollarPrice(1000);
-		p2.setItemName("diamond ring");
-		p2.setQuantityInStock(50);
-		p2.setDept(departments.get(1));
-		
-		inventory.add(p2);
-		
+		/* To update, open a transaction, and simply 
+		 * make changes to an EM-managed object.		
+		 * 
+		 * Since we called persist() on pineappleProduct
+		 * above, the EM has been "managing" it.
+		 * 
+		 */
 		
 		em.getTransaction().begin();
-		
-		em.persist(p);
-		
-		em.getTransaction().commit();
-		
-
-
-		
-		/* ----- Sale on diamond rings ----- */
-		
-		em.getTransaction().begin();
-		
-		for(Product product : inventory)
-			if(product.getItemName().equals("diamond ring"))
-				product.setDollarPrice(1);
+		 
+		pineappleProduct.setDollarPrice(
+				pineappleProduct.getDollarPrice() * 2);
 		
 		em.getTransaction().commit();
 		
 		
 		
 		
-		/* ----- No more diamond rings ----- */
+		/* The EM has to know exactly what record in the DB 
+		 * an object is mapped to, to make any updates.
+		 * 
+		 * Two ways to obtain a "managed" object:
+		 * 
+		 * - Persist an object. After the persist() call, 
+		 * 		the EM will be managing that object. 
+		 * 		Demonstrated above. 
+		 * 
+		 * - Call find() to retrieve an object from the database.
+		 * 		The retrieved object will be managed.
+		 */
+		
+
+
+		
+		/* Sale on diamond rings */
+		
+		/* This time, instead of using the ringProduct reference
+		 * directly, which we know is managed, let's call find() 
+		 * to retrieve the managed Product from the DB.
+		 */
+		
+		Product product = em.find(Product.class, 2);
+		
+		em.getTransaction().begin();
+				
+		product.setDollarPrice(1);
+		
+		em.getTransaction().commit();
+		
+		
+		
+		
+		/* All sold out of diamond rings */
 		
 		em.getTransaction().begin();
 		
-		for(Product product : inventory)
-			if(product.getItemName().equals("diamond ring"))
-				em.remove(product);
+		em.remove(product);
 		
 		em.getTransaction().commit();
 
 		
-		/* ----- Populate lists with data from DB and print ----- */
-
-		printDB(em);
 		
-		/* ----- Close EntityManager and EntityManagerFactory when done ----- */
+		/* Close EntityManager and EntityManagerFactory when done */
 		
 		em.close();
-
+		emf.close();
 	}
 	
 }
