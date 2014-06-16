@@ -5,6 +5,7 @@ public class ClassA {
 	public void method1()
 	{
 		System.out.println("Class A method1 action.");
+
 	}
 
 	public int method2()

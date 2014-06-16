@@ -1,6 +1,8 @@
 
 package com.fdmgroup.example.aop;
 
+import java.io.IOException;
+
 public class ClassB {
 
 	public void method1()
@@ -16,9 +18,14 @@ public class ClassB {
 	}
 	
 	
-	public ClassB getInstance()
+	public ClassB getInstance() throws IOException
 	{
 		System.out.println("Class B: Creating Class B!");
+		
+		if(true)
+			throw new IOException();
+		
 		return new ClassB();
+		
 	}
 }
