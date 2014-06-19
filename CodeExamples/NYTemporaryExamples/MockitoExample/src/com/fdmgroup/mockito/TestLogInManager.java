@@ -20,17 +20,18 @@ public class TestLogInManager {
 	public void testLogInSuccess() {
 		
 		// Create the mock
-		User testUser = mock(User.class);
+		User mockUser = mock(User.class);
 		
 		// Stubbing
-		when(testUser.getUsername()).thenReturn("admin");
-		when(testUser.isLoggedIn()).thenReturn(false);
+		when(mockUser.getUsername()).thenReturn("admin");
+		when(mockUser.isLoggedIn()).thenReturn(false);
 		
-		assertTrue(manager.logIn(testUser));
+		assertTrue(manager.logIn(mockUser));
 		
-		verify(testUser).getUsername();
-		verify(testUser).getPassword();
-		verify(testUser).isLoggedIn();
+		verify(mockUser).getUsername();
+		verify(mockUser).getPassword();
+		verify(mockUser).setLoggedIn(true);
+		verify(mockUser).isLoggedIn();
 		
 	}
 
