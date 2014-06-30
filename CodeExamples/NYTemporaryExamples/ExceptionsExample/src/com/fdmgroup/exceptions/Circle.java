@@ -3,27 +3,16 @@ package com.fdmgroup.exceptions;
 public class Circle {
     private final double radius;
     
-    /**
-    * Constructor.
-    * @param radius the radius of the circle.
-    * @throws IllegalArgumentException if radius is negative.
-    */
-    public Circle(double radius) {  // runtime exception is not declared
+    public Circle(double radius) throws BadArgException {  
         if (radius < 0.0) {
-            // defensive coding here
+        	
         	// what to do if bad arg
-        	try {
-        		
-				throw new BadArgException("Radius " + radius
+        	throw new BadArgException("Radius " + radius
 				    + " cannot be negative");
 				
-			} catch (BadArgException e) {
-				e.printStackTrace();
-				// what to do if bad arg
-			}
         }
-        
-        this.radius = radius;
+        else
+        	this.radius = radius;
     }
    
 }
