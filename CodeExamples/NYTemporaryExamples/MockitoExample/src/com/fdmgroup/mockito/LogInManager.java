@@ -13,6 +13,8 @@ public class LogInManager {
 		if(user.isLoggedIn())
 			return false;
 		
+		user.setLoggedIn(true);
+		
 		return loggedInUsers.add(user.getUsername());
 
 	}
@@ -21,6 +23,8 @@ public class LogInManager {
 		
 		if(!user.isLoggedIn())
 			return false;
+		
+		user.setLoggedIn(false);
 		
 		return loggedInUsers.remove(user.getUsername());
 	}
