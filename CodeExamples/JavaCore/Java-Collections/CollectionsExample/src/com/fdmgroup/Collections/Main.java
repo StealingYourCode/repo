@@ -15,7 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		
-		final int SAMPLE_LIMIT = 20000;
+		final int SAMPLE_LIMIT = 30000;
 		
 		
 		StopWatch sw = new StopWatch();
@@ -32,12 +32,14 @@ public class Main {
 		Set<Integer> setSample = new TreeSet<Integer>();
 
 		sw.start();
+		
 		for (int index = 0; index < SAMPLE_LIMIT; index++) {
 			listSample.add(sample[index]);
 		}
+		
 		sw.stop();
 		
-		long listAddTime = sw.getElapsedTime();
+		long arrayListAddTime = sw.getElapsedTime();
 		
 		sw.start();
 		for (int index = 0; index < SAMPLE_LIMIT; index++) {
@@ -45,7 +47,7 @@ public class Main {
 		}
 		sw.stop();
 		
-		long listQTime = sw.getElapsedTime();
+		long linkedListAddTime = sw.getElapsedTime();
 		
 		sw.start();
 		for (int index = 0; index < SAMPLE_LIMIT; index++) {
@@ -53,7 +55,7 @@ public class Main {
 		}
 		sw.stop();
 		
-		long listTreeTime = sw.getElapsedTime();
+		long treeSetAddTime = sw.getElapsedTime();
 
 		
 		System.out.println("base sample");
@@ -79,13 +81,15 @@ public class Main {
 		
 		sw.start();
 		for (int index = 0; index < SAMPLE_LIMIT; index++) {
-			listSample.contains(sample[index]);
+			//listSample.contains(sample[index]);
+			listSample.get(index);
+			
 		}
 		sw.stop();
 		
 		System.out.println("Time to add elements in an ArrayList:"
-				+ listAddTime);
-		System.out.println("Time to find element in an ArrayList:"
+				+ arrayListAddTime);
+		System.out.println("Time to find elements in an ArrayList:"
 				+ sw.getElapsedTime());
 
 		sw.start();
@@ -95,8 +99,8 @@ public class Main {
 		sw.stop();
 		
 		System.out.println("Time to add element in a PriorityQueue:"
-				+ listQTime);
-		System.out.println("Time to find element in a PriorityQueue:"
+				+ linkedListAddTime);
+		System.out.println("Time to find elements in a PriorityQueue:"
 				+ sw.getElapsedTime());
 
 		sw.start();
@@ -105,8 +109,8 @@ public class Main {
 		}
 		sw.stop();
 		
-		System.out.println("Time to add element in a TreeSet:" + listTreeTime);
-		System.out.println("Time to find element in a TreeSet:"
+		System.out.println("Time to add element in a TreeSet:" + treeSetAddTime);
+		System.out.println("Time to find elements in a TreeSet:"
 				+ sw.getElapsedTime());
 
 	}
