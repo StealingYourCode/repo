@@ -5,6 +5,7 @@ import java.util.*;
 
 public class GenericMethodExample {
  
+	
 	public <T> List<T> makeArrayList(T item) { 	
 											// take an object of an
 	                                    	// unknown type and use a
@@ -21,7 +22,7 @@ public class GenericMethodExample {
 		
 		GenericMethodExample gme = new GenericMethodExample();
 		
-		List<String> list = gme.makeArrayList(new String());
+		List<String> list = gme.makeArrayList("hi");
 		
 	}
 	

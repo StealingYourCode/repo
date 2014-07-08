@@ -16,7 +16,9 @@ class Dog extends Animal {}
 
 class Cat extends Animal {}
 
-class Person {}
+class Person extends Animal {}
+
+class Superman extends Person implements Flier {}
 
 interface Flier {}
 
@@ -35,36 +37,32 @@ class AnimalDoctor<T extends Animal> {
 	}
 }
 
+
+class ArrayAnimalDoctor {
+	
+	public void addAnimal(Animal[] a){
+	      a[0] = new Cat();
+	}
+
+}
+
+
 public class BoundsExample {
 
 
 	public static void main(String[] args) {
 
+		ArrayAnimalDoctor doctor = new ArrayAnimalDoctor();
 		
+		Dog[] dogArray = new Dog[3];
 		
+		doctor.addAnimal(dogArray);
 		
-		
-		
-		
-		
-		// AnimalDoctor<Dog> dogDoctor = new AnimalDoctor<Dog>();
-		// dogDoctor = new AnimalDoctor<Cat>();
-		
-		// AnimalDoctor<?> anyDoctor = new AnimalDoctor<Cat>();
-		// anyDoctor = new AnimalDoctor<Dog>();
-
-		// This reference can point to a list of elements of any typ
-		List<?> myList = new ArrayList<Cat>();
-		myList = new ArrayList<Dog>();
-		myList = new ArrayList<Float>();
-		myList = new ArrayList<Object>();
-
-		// Add doesn't work. Why not?
-		// myList.add(new Dog());
-
-		// This reference can ONLY point to ArrayList of Objects
-		List<Object> myList2 = new ArrayList<Object>();
-
 	}
 
 }
+
+
+
+
+
