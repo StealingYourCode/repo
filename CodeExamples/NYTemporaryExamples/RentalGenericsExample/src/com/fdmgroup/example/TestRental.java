@@ -1,6 +1,8 @@
 package com.fdmgroup.example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -23,7 +25,8 @@ public class TestRental {
 		preGenericPool.add(new Car());
 		preGenericPool.add(new Car());
 		preGenericPool.add(new Car());
-		preGenericPool.add(new Car());
+		preGenericPool.add(new StringBuffer());
+		preGenericPool.add(new LinkedHashSet());
 
 		genericPool = new ArrayList<Car>();
 
@@ -44,12 +47,14 @@ public class TestRental {
 		if (rentalObject instanceof Car)
 			myCar = (Car) rentalObject;
 
+		// Drive the car
+		
 		rental.returnOne(myCar);
 
 	}
 
 	@Test
-	public void demoCarRental() {
+	public void demoCarRental() throws Exception {
 
 		CarRental carRental = new CarRental(preGenericPool);
 
@@ -66,5 +71,17 @@ public class TestRental {
 		Car myCar = genericCarRental.getOne();
 		genericCarRental.returnOne(myCar);
 	}
-
+	
+	@Test
+	public void demo(){
+		GenericRental<Comparator> compRental = 
+				new GenericRental<Comparator>(
+						new ArrayList<Comparator>());
+		
+		
+	}
+	
+	
+	
+	
 }
