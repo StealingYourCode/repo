@@ -4,23 +4,13 @@ import java.util.*;
 
 
 public class GenericMethodExample {
-	
-	public <T> GenericMethodExample(){
-		// TODO Look up why anyone would use this, ever, if ever	
-	}
  
-	public <T,Y> List<T> makeArrayList(T item) { 	
+	public <T> List<T> makeArrayList(T item) { 	
 											// take an object of an
 	                                    	// unknown type and use a
 											// "T" to represent the type
 	    List<T> list = new ArrayList<T>(); 	// now we can create the
 	                                       	// list using "T"
-	    
-	    List<Y> otherList = new ArrayList<Y>(); // TODO Why are we allowed to do this?
-	    
-	    
-	    System.out.println(otherList);
-	    
 	    list.add(item);
 	    
 	    return list;
@@ -31,7 +21,8 @@ public class GenericMethodExample {
 		
 		GenericMethodExample gme = new GenericMethodExample();
 		
-		gme.makeArrayList(new Object());
+		List<String> list = gme.makeArrayList(new String());
+		
 	}
 	
 	

@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
+
 public class GenericSyntax {
 
 	
@@ -17,16 +18,17 @@ public class GenericSyntax {
 		
 		
 		
+		
+		
+		
+		
+		
+		
 		List<?> list1 = new ArrayList<Object>();
 		// here
 		list1 = new ArrayList<String>();
 		// here
-		list1 = new ArrayList<TestGenerics<Comparable>>();
-		// here
 		
-		List<Object> list2 = new ArrayList<Object>();
-		
-		List<? extends Object> list3 = new ArrayList<Integer>();
 	}
 }
 
