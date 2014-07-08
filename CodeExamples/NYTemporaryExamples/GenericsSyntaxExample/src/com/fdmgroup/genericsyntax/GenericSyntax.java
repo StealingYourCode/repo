@@ -16,14 +16,6 @@ public class GenericSyntax {
 		
 		myList = new LinkedList<Object>();
 		
-		
-		
-		
-		
-		
-		
-		
-		
 		List<?> list1 = new ArrayList<Object>();
 		// here
 		list1 = new ArrayList<String>();
@@ -33,12 +25,12 @@ public class GenericSyntax {
 }
 
 
-class TestGenerics<W extends Comparable> {			// as the class type
+class GenericClass<W extends Comparable> {			// as the class type
 
 	W	anInstance;		// as an instance variable type
 	W[]	anArrayOfTs;	// as an array type
 
-	TestGenerics(W anInstance) { // as an argument type
+	GenericClass(W anInstance) { // as an argument type
 
 		this.anInstance = anInstance;
 	}
