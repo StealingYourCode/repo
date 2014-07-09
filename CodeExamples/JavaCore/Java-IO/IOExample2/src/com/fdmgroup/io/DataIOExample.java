@@ -8,12 +8,12 @@ public class DataIOExample {
 		String manufacturer1 = "Cadbury";
 		String product1 = "Cream Egg";
 		double price1 = 0.50;
-		int rating1 = 9;
+		int rating1 = 6;
 
 		String manufacturer2 = "Mars";
-		String product2 = "Snickers";
+		String product2 = "Bounty";
 		double price2 = 0.35;
-		int rating2 = 6;
+		int rating2 = 9;
 
 		try {
 			
@@ -43,6 +43,7 @@ public class DataIOExample {
 			String product1_read = dis.readUTF();
 			double price1_read = dis.readDouble();
 			int rating1_read = dis.readInt();
+			
 
 			String manufacturer2_read = dis.readUTF();
 			String product2_read = dis.readUTF();

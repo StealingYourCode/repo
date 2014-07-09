@@ -13,15 +13,32 @@ public class MixingData
 		File file1 = new File("mixing.txt");
 		
 		try {
-			DataOutputStream dos = new DataOutputStream(new FileOutputStream(file1));
-			DataInputStream dis = new DataInputStream(new FileInputStream(file1));
-			dos.writeInt(125);
-			dos.flush();
-			dos.close();
+			OutputStreamWriter osw = 
+					new OutputStreamWriter(
+							new FileOutputStream("out.txt"));
+		
 			
-			int newInt = dis.readInt();
-			System.out.println("New int is: "+newInt);
-			dis.close();
+			osw.write('r');
+			
+			osw.flush();
+			osw.close();
+			
+			InputStreamReader isr = 
+					new InputStreamReader(
+							new FileInputStream("out.txt"));
+			
+			char r = (char)isr.read();
+			System.out.println(r);
+			
+//			DataOutputStream dos = new DataOutputStream(new FileOutputStream(file1));
+//			DataInputStream dis = new DataInputStream(new FileInputStream(file1));
+//			dos.writeInt(125);
+//			dos.flush();
+//			dos.close();
+//			
+//			int newInt = dis.readInt();
+//			System.out.println("New int is: "+newInt);
+//			dis.close();
 		} 
 		catch (FileNotFoundException e) 
 		{		
