@@ -9,7 +9,7 @@ public class Mammal extends Animal implements Serializable
 	
 	Mammal(boolean l, boolean s, String n)
 	{
-		super(n); 
+		super(n,4); 
 		land = l; 
 		sea = s;
 	}

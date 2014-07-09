@@ -9,6 +9,7 @@ public class Animal // implements Serializable
 {
 	private String name;
 	
+	
 	Animal(String n)
 	{
 		name = n;

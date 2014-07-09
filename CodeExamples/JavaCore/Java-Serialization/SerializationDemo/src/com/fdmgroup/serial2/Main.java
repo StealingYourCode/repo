@@ -43,7 +43,9 @@ public class Main
 			e.printStackTrace();
 		}
 				
-		System.out.println("De-serialized Animal a2 has name: "+a2.getName()
-				+" and house number is: "+a2.getHome().getNumber());
+		System.out.println("De-serialized Animal a2 has name: "+
+						a2.getName()
+				+" and house number is: "+
+						a2.getHome().getNumber());
 	}
 }

@@ -20,7 +20,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		//create mammal to serialize
-		Mammal m1 = new Mammal(true,false,"horse");
+		Mammal m1 = new Mammal(true,false,"Horse");
 		Mammal m2 = null;	
 			
 		try

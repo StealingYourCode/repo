@@ -7,10 +7,12 @@ import java.io.Serializable;
 public class Animal  implements Serializable
 {
 	private String name;
+	private transient int age;
 	
-	Animal(String n)
+	Animal(String n, int age)
 	{
 		name = n;
+		this.age = age;
 	}
 
 	Animal()
@@ -26,6 +28,10 @@ public class Animal  implements Serializable
 	public void setName(String name)
 	{
 		this.name = name;
+	}
+	
+	public int getAge(){
+		return age;
 	}
 	
 }

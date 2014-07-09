@@ -16,7 +16,7 @@ public class Main
 	public static void main(String[] args)
 	{
 		//create mammal to serialize
-		Mammal m1 = new Mammal(true,false,"horse");
+		Mammal m1 = new Mammal(true,false,"Horse");
 		Mammal m2 = null;	
 			
 		try
@@ -44,6 +44,6 @@ public class Main
 		}
 				
 		System.out.println("De-serialized Animal a2 has name: "+m2.getName()
-			+" land is: "+m2.isLand());				
+			+" land is: "+m2.isLand()+" age in: "+m2.getAge());				
 	}
 }
