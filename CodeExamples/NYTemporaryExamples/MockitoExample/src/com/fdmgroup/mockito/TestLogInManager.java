@@ -29,10 +29,9 @@ public class TestLogInManager {
 		assertTrue(manager.logIn(mockUser));
 		
 		verify(mockUser).getUsername();
-		verify(mockUser).getPassword();
 		verify(mockUser).setLoggedIn(true);
 		verify(mockUser).isLoggedIn();
-		
+//		verify(mockUser).getPassword();
 	}
 
 }
