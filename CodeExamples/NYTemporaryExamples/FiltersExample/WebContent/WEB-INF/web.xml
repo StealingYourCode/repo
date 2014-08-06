@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>FiltersExample</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>GoServlet</display-name>
+		<servlet-name>GoServlet</servlet-name>
+		<servlet-class>com.fdm.filtersexample.GoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GoServlet</servlet-name>
+		<url-pattern>/go</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<display-name>BootsFilter</display-name>
+		<filter-name>BootsFilter</filter-name>
+		<filter-class>com.fdm.filtersexample.BootsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>BootsFilter</filter-name>
+		<url-pattern>/go</url-pattern>
+	</filter-mapping>
+	<filter>
+		<display-name>HatFilter</display-name>
+		<filter-name>HatFilter</filter-name>
+		<filter-class>com.fdm.filtersexample.HatFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HatFilter</filter-name>
+		<url-pattern>/next.jsp</url-pattern>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+</web-app>
