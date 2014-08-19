@@ -25,7 +25,7 @@ public class JDBC_Demo5
 	
 	public JDBC_Demo5(){
 	
-		properties = PropertiesLoader.getProperties("fake.properties");
+		properties = PropertiesLoader.getProperties("real.properties");
 	
 		if (properties != null) {
 			
@@ -46,7 +46,7 @@ public class JDBC_Demo5
 	        
 			// Get a connection object -- this could fail!
 			conn = DriverManager.getConnection(url,username,password);
-			conn.setAutoCommit(false); //so that we can commit multiple sql commands at the same time
+		//	conn.setAutoCommit(false); //so that we can commit multiple sql commands at the same time
 
 			
 			//Get first and last name from user  
@@ -82,7 +82,7 @@ public class JDBC_Demo5
 	        
         	// Execute everything in the batch, then commit
 	        statement.executeBatch();
-	        conn.commit();
+	      //  conn.commit();
 	       	        
 		} catch (SQLException sqle) {
 			sqle.printStackTrace(); 

@@ -22,7 +22,7 @@ public class JDBC_Demo1 {
 	
 	public JDBC_Demo1(){
 	
-		properties = PropertiesLoader.getProperties("fake.properties");
+		properties = PropertiesLoader.getProperties("real.properties");
 	
 		if (properties != null) {
 			

@@ -31,7 +31,7 @@ public class JDBC_Demo2
 	
 	public JDBC_Demo2(){
 	
-		properties = PropertiesLoader.getProperties("fake.properties");
+		properties = PropertiesLoader.getProperties("real.properties");
 	
 		if (properties != null) {
 			
@@ -80,6 +80,8 @@ public class JDBC_Demo2
 	        while(!rs.isLast()) {
 	        	String entry;
 
+	        	//TODO rearrange this
+	        	//TODO allow exit
 	        	try {
 	                 entry = br.readLine();
 	                 if (entry.equals("next"))
