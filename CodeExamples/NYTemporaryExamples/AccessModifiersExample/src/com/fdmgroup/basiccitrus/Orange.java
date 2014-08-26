@@ -4,10 +4,11 @@ package com.fdmgroup.basiccitrus;
 // and one private member.
 public class Orange {
 	
-	private String privateString = "hello world";
+	private String privateHello = "hello self";
+	
 	String defaultString = "hello package";
 	
-	protected String protectedColor = "orange";
+	protected String protectedString = "hello package and subclasses*";
 
 	protected void printOrange(){
 		
