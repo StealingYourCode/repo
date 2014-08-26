@@ -3,10 +3,9 @@ package com.fdmgroup.apples;
 public class RedApple extends Apple {
 
 	
-	
 	public RedApple(String color, String taste){
 
-		super(color,taste);  
+		super(color,taste); 
 		
 		System.out.println("RedApple ARG Constructor");
 	}

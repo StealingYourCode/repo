@@ -7,8 +7,6 @@ public class Apple {
 	
 
 	public Apple(String color, String taste){
-		
-		// Implicit super() call 
 	
 		this.color = color;
 		this.taste = taste;
@@ -16,16 +14,15 @@ public class Apple {
 		System.out.println("Apple ARG Constructor");
 	}
 	
-	
 
-//	public Apple() {
-//		
-//		this("apple-colored","like an apple");
-//		
-//		System.out.println("Apple NO-ARG Constructor");
-//
-//				
-//	}
-	
+	public Apple() {
+		
+		this("apple-colored","like an apple");
+		
+		System.out.println("Apple NO-ARG Constructor");
+
+				
+	}
+
 
 }
