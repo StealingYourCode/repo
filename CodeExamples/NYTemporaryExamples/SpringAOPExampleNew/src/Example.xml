@@ -7,8 +7,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<bean id="conLog" class="com.fdmgroup.example.aop.ConsoleLog" />
-	<bean id="cA" class="com.fdmgroup.example.aop.ClassA" />
-	<bean id="cB" class="com.fdmgroup.example.aop.ClassB" />
+	<bean id="first" class="com.fdmgroup.example.aop.First" />
+	<bean id="second" class="com.fdmgroup.example.aop.Second" />
 
 	<!-- <aop:aspectj-autoproxy /> -->
 
