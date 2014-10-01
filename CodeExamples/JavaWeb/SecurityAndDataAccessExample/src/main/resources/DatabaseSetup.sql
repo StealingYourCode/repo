@@ -1,61 +1,64 @@
 DROP TABLE example_users CASCADE CONSTRAINTS;
-CREATE TABLE example_users (
-  username VARCHAR2(100) PRIMARY KEY,
+DROP TABLE example_roles CASCADE CONSTRAINTS;
+DROP TABLE example_user_roles CASCADE CONSTRAINTS;
+
+
+CREATE TABLE example_users (  
+	user_name VARCHAR2(100) PRIMARY KEY,
+	password VARCHAR2(25),
   address VARCHAR2(250)
 );
-INSERT INTO example_users VALUES(
-  'aPerson',
-  'My Address'
+
+CREATE TABLE example_roles (
+  role VARCHAR2(15) PRIMARY KEY
 );
-INSERT INTO example_users VALUES(
-  'aNormalPerson',
-  'My Address as well'
-);
-COMMIT;
-DROP TABLE tomcat_users;
-DROP TABLE tomcat_user_roles;
-CREATE TABLE tomcat_users (
-  user_name VARCHAR2(15) NOT NULL PRIMARY KEY,
-  user_pass VARCHAR2(15) NOT NULL
-);
-CREATE TABLE tomcat_user_roles (
+
+CREATE TABLE example_user_roles (
   user_name VARCHAR2(15) NOT NULL,
   role_name VARCHAR2(15) NOT NULL,
-  PRIMARY KEY(user_name, role_name)
+  PRIMARY KEY(user_name, role_name),
+  CONSTRAINT eur_name_fk FOREIGN KEY (user_name) REFERENCES example_users(user_name),
+  CONSTRAINT eur_role_fk FOREIGN KEY (role_name) REFERENCES example_roles(role)
 );
-INSERT INTO tomcat_users (
-  user_name,
-  user_pass
-) VALUES (
-  'aPerson',
-  'javaROX!'
+
+INSERT INTO example_users VALUES(
+  'john.smith',
+  'password123',
+  'London'
 );
-INSERT INTO tomcat_users (
-  user_name,
-  user_pass
-) VALUES (
-  'aNormalPerson',
-  'javaROX!'
+INSERT INTO example_users VALUES(
+  'jane.doe',
+  'password123',
+  'New York'
 );
-INSERT INTO tomcat_user_roles (
-  user_name,
-  role_name
-) VALUES (
-  'aPerson',
-  'admin'
+
+INSERT INTO example_roles VALUES(
+  'basic_user'
 );
-INSERT INTO tomcat_user_roles (
-  user_name,
-  role_name
-) VALUES (
-  'aPerson',
-  'user'
+
+INSERT INTO example_roles VALUES(
+  'admin_user'
 );
-INSERT INTO tomcat_user_roles (
+
+INSERT INTO example_user_roles (
   user_name,
   role_name
 ) VALUES (
-  'aNormalPerson',
-  'user'
+  'john.smith',
+  'basic_user'
+);
+INSERT INTO example_user_roles  (
+  user_name,
+  role_name
+) VALUES (
+  'jane.doe',
+  'basic_user'
+);
+INSERT INTO example_user_roles (
+  user_name,
+  role_name
+) VALUES (
+  'jane.doe',
+  'admin_user'
 );
 COMMIT;

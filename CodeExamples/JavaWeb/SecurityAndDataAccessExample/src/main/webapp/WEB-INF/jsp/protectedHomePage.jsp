@@ -4,13 +4,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>This is a protected page</title>
+		<title>User Home Page</title>
 	</head>
 	<body>
-		<h1>You are viewing a protected page!</h1>
-		<p>Your address is ${address}</p>
-		<c:if test="${sessionScope.isUser}">
-			<h2>You are a user!</h2>
+		<h1>You are viewing a protected page after successfully logging in!</h1>
+		<p>Welcome ${username}</p>
+		<p>You live in ${userAddress}</p>
+		<c:if test="${sessionScope.adminRole}">
+			<h2>You are an admin!</h2>
 		</c:if>
 	</body>
 </html>
