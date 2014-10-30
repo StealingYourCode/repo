@@ -15,12 +15,15 @@ public class SpringAOPMain {
 				new ClassPathXmlApplicationContext("Example.xml");
 		
 		UserFactory userFactory = (UserFactory) ctx.getBean("factory");
-		User user = (User) ctx.getBean("user");
+		User user 				= (User) ctx.getBean("user");
 		
 
 		user.work();
-		user.play();
-		userFactory.operate();
+		//user.play();
+		userFactory.operate(17);
+		
+		//userFactory.createUser();
+		//user.play(6.0);
 		
 		((ConfigurableApplicationContext)ctx).close();
 		

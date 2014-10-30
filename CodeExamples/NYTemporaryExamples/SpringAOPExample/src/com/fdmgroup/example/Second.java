@@ -7,7 +7,7 @@ public class Second {
 		//console logging
 		System.out.println("Log: methodA called.");
 		
-		System.out.println("User: methodA actual action.");
+		System.out.println("Second: methodA actual action.");
 		
 		//console logging
 		System.out.println("Log: methodA end.");

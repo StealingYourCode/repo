@@ -7,7 +7,7 @@ public class First {
 		//console logging
 		System.out.println("Log: methodA called.");
 		
-		System.out.println("UserFactory: methodA actual action.");
+		System.out.println("First: methodA actual action.");
 		
 		//console logging
 		System.out.println("Log: methodA end.");

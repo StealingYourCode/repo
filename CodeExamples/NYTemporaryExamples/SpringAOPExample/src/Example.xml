@@ -8,36 +8,50 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 
 	<bean id="conLog" class="com.fdmgroup.example.aop.ConsoleLog" />
 	<bean id="factory" class="com.fdmgroup.example.aop.UserFactory" />
-	<bean id="user" class="com.fdmgroup.example.aop.User" />
+	<bean id="user" class="com.fdmgroup.example.aop.User">
+		<constructor-arg value="Billy" index="0" />
+		<constructor-arg value="Hi Mom!" index="1" />
+	</bean>
 
-	<!-- <aop:aspectj-autoproxy proxy-target-class="true" /> -->
 
-	<aop:config>
+	<aop:aspectj-autoproxy proxy-target-class="true" />
 
-		<aop:pointcut id="everything" expression="execution(* *(..))" />
+<!-- 	<aop:config> -->
 
-		<aop:pointcut id="anyWork" expression="execution(* work(..))" />
+<!-- 		<aop:pointcut id="everything" expression="execution(* *(..))" /> -->
 
-		<aop:pointcut id="returningUserInUser"
-			expression="execution(com.fdmgroup.example.aop.User com.fdmgroup.example.aop.User.*(..))" />
+<!-- 		<aop:pointcut id="anyWork" expression="execution(* work(..))" /> -->
 
-		<aop:pointcut id="returningUserInAopPackage"
-			expression="execution(com.fdmgroup.example.aop.User com.fdmgroup.example.aop.*.*(..))" />
-		
-		<aop:aspect id="loggingAspect" ref="conLog">
+<!-- 		<aop:pointcut id="returningUserInUser" -->
+<!-- 			expression="execution(com.fdmgroup.example.aop.User com.fdmgroup.example.aop.User.*(..))" /> -->
 
-			<aop:before pointcut-ref="everything" method="logEntry" />
-			
-			<aop:after pointcut-ref="anyWork" method="logExitWork" />
+<!-- 		<aop:pointcut id="returningUserInAopPackage" -->
+<!-- 			expression="execution(com.fdmgroup.example.aop.User com.fdmgroup.example.aop.*.*(..))" /> -->
 
-			<aop:after-returning pointcut-ref="returningUserInAopPackage"
-				returning="returnedObject" method="logReturnUser" />
+<!-- 		<aop:aspect id="loggingAspect" ref="conLog"> -->
+
+<!-- 			<aop:before pointcut-ref="everything" method="logEntry" /> -->
+
+<!-- 			<aop:after pointcut-ref="anyWork" method="logExitWork" /> -->
+
+<!-- 			<aop:after pointcut="execution(* *(int))" method="logIntArg" /> -->
+
+<!-- 			<aop:after-returning pointcut-ref="returningUserInUser" -->
+<!-- 				method="logNothingness" /> -->
+
+
+<!-- 			<aop:after-returning pointcut-ref="returningUserInAopPackage" -->
+<!-- 				returning="returnedObject" method="logReturnUser" /> -->
+
+<!-- 			<aop:after-throwing pointcut-ref="returningUserInUser" -->
+<!-- 				throwing="thrownExc" method="logExcThrown" /> -->
 				
-			<aop:after-returning pointcut-ref="returningUserInUser"
-				returning="returnedObject" method="logReturnUser" />
+<!-- 			<aop:around pointcut="execution(* play(..))" method="logAroundPlay" /> -->
+		
+			
 
-		</aop:aspect>
+<!-- 		</aop:aspect> -->
 
-	</aop:config>
+<!-- 	</aop:config> -->
 
 </beans>
