@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>ServletDemo</display-name>
+	<welcome-file-list>
+		<welcome-file>home.html</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>admin_email</param-name>
+		<param-value>somebody@fdmgroup.com</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>FirstServlet</servlet-name>
+		<servlet-class>com.fdmgroup.servletdemo.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/go</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SecondServlet</servlet-name>
+		<servlet-class>com.fdmgroup.servletdemo.SecondServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SecondServlet</servlet-name>
+		<url-pattern>/gofurther</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FirstPage</servlet-name>
+		<jsp-file>/WEB-INF/firstPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FirstPage</servlet-name>
+		<url-pattern>/page_one</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>CoffeeFilter</filter-name>
+		<filter-class>com.fdmgroup.servletdemo.CoffeeFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CoffeeFilter</filter-name>
+		<url-pattern>/go</url-pattern>
+	</filter-mapping>
+	<filter>
+		<display-name>CounterFilter</display-name>
+		<filter-name>CounterFilter</filter-name>
+		<filter-class>com.fdmgroup.servletdemo.CounterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CounterFilter</filter-name>
+		<url-pattern>/go</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.fdmgroup.servletdemo.DuplicateListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.fdmgroup.servletdemo.MyListener</listener-class>
+	</listener>
+
+</web-app>
