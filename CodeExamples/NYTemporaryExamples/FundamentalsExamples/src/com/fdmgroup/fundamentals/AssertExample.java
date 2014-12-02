@@ -5,17 +5,21 @@ public class AssertExample {
 	
 	public static void main(String[] args){
 		
-		int myFive = 5;
+		int myFive;
 		
-		// absolutely must be a five here
-		
-		// evil code
-		myFive = 4;
+		// We know this variable SHOULD hold a five
+		myFive = getFive();
 		
 		assert(myFive == 5);
 		
 		System.out.println("Life is good.");
 		
+	}
+	
+	public static int getFive(){
+		
+		// Evil code!
+		return 4;
 	}
 	
 }

@@ -1,22 +1,44 @@
 package com.fdmgroup.fundamentals;
 
-import java.io.IOException;
+
+class Person {
+	
+	String name;
+}
+
+class Trainee extends Person {
+	String stream;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 public class OverloadingOverriding {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		
 		Animal a = new Dog();
-		
+		//a.breathe();
+		Dog d = new Dog();
+		//d.breathe();
 	}
 	
 }
 
 class Animal {
 	
-	Object breathe() throws IOException{
-		
+
+	public Object breathe(){
 		System.out.println("Animal breathing");
 		return null;
 	}
@@ -25,8 +47,9 @@ class Animal {
 
 
 class Dog extends Animal {
-	
-	public Object breathe() {
+
+	@Override
+	public Object breathe(){
 		
 		System.out.println("Breathing like a dog");
 		return null;
@@ -37,13 +60,6 @@ class Dog extends Animal {
 
 
 	
-// Rule #1: Return type of override can be 
-//	a subtype of original return type
-
-// Rule #2: Overrride must be at least as visible as 
-//    original method.
-
-
 
 
 

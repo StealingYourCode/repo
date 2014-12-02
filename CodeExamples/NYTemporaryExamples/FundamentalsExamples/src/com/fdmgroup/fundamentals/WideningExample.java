@@ -13,14 +13,19 @@ public class WideningExample {
 		short s = 5;
 		long l = 5;
 		float f = 5.0f;
-
-//		go(20);
-//		go(024);
-//		go(0x14);
 		
+		go(5);
 	    go(b);
 	    go(s);
 	    go(l);
 	    go(f);
+	    
+	    
+	   
+		System.out.println(20);
+		System.out.println(024);
+		System.out.println(0x14);
+		
+
 	}	
 }
