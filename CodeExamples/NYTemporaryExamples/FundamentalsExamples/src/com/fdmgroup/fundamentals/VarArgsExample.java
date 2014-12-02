@@ -2,6 +2,7 @@ package com.fdmgroup.fundamentals;
 
 
 public class VarArgsExample {
+	// hi
 	
 	public static void go(int x){
 		System.out.println("int method");
