@@ -6,7 +6,7 @@ public class AppleMaker {
 		
 		// What will be the output of this line of code?
 		
-		Apple myLunchApple = new Apple("red","good");
+		Apple myLunchApple = new FujiApple();
 		
 		System.out.println("Color: " + myLunchApple.color);
 		System.out.println("Taste: " + myLunchApple.taste);
