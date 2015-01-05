@@ -49,7 +49,8 @@ public class DataIOExample {
 			String product2_read = dis.readUTF();
 			double price2_read = dis.readDouble();
 			int rating2_read = dis.readInt();
-
+			
+			
 			dis.close();
 
 			System.out.println("Manufacturer1: " + manufacturer1_read);
